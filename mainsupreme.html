@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Questrial&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Questrial', sans-serif;
+            background-image: url(https://lh3.googleusercontent.com/OgkeuWkaqzitj1Hive93wL0gBSao8oaNsSu9h_xbe6-uuq_pVqTMSqbmgDQYGB2m_Jlrn90YC-WciY7i96Fe2GLU08x_ctQxAWESrrwL_ysMul_qYqSUGPXb9W2GWiJQzfdBHviC8A) background-repeat: no-repeat;
+            background-position: cover;
+            background-blend-mode: lighten;
+            background-color: white;
+            background-size: 100% 25%;
+            max-width: 100vw;
+            max-height: auto;
+            margin: 0 auto;
+        }
+
+        img {
+            opacity: .9;
+            width: 100%;
+            height: 100%;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-transition: 0.35s ease;
+            transition: 0.35s ease;
+        }
+
+        nav {
+            z-index: 1;
+
+            color: black;
+        }
+
+        .logo {
+            color: #00a6ff;
+            background-color: black;
+
+        }
+
+        hr.style3 {
+            border-top: 1px dashed #8c8b8b;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            font-family: 'Questrial', sans-serif;
+            font-family: 'Lobster', cursive;
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            z-index: 3;
+        }
+
+        nav h1 {
+            font-family: 'Sacramento', cursive;
+
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        i {
+            float: right;
+            color: white;
+        }
+
+        input[type='checkbox'] {
+            display: none;
+        }
+
+        #wrap-collabsible {
+
+            position: fixed;
+            top: 0;
+        }
+
+        .lbl-toggle {
+            position: fixed;
+            z-index: 2;
+            top: 30;
+            right: 1.6%;
+            float: right;
+            display: block;
+            color: black;
+            font-weight: bold;
+            font-family: monospace;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            text-align: right;
+
+            padding: 1rem;
+
+
+
+            cursor: pointer;
+
+            border-radius: 7px;
+            transition: all 0.25s ease-out;
+        }
+
+        .lbl-toggle:hover {}
+
+        .lbl-toggle::before {
+            content: ' ';
+            display: inline-block;
+
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-left: 5px solid currentColor;
+
+            vertical-align: middle;
+            margin-right: .10rem;
+            transform: translateY(-2px);
+
+            transition: transform .2s ease-out;
+        }
+
+        .collapsible-content .content-inner {
+            background: black;
+            border-bottom: 1px solid rgba(250, 224, 66, .45);
+
+            border-bottom-left-radius: 7px;
+            border-bottom-right-radius: 7px;
+            padding: .5rem 1rem;
+        }
+
+        .collapsible-content {
+            z-index: 1;
+            max-height: 0px;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            transition: max-height .25s ease-in-out;
+        }
+
+
+        .checkout-modal {
+            background: #fff;
+            margin: auto;
+            max-width: 768px;
+            width: 100%;
+        }
+
+        .checkout-modal>.fluid-container>.row>[class*='col'] {
+            padding: 1em 2em
+        }
+
+        .css-table {
+            display: table;
+        }
+
+        .css-table-row {
+            display: table-row;
+        }
+
+        .css-table-cell {
+            display: table-cell;
+            padding: 0.5em;
+        }
+
+        .css-table-cell:first-child {
+            padding-left: 0;
+        }
+
+        .css-table-cell:last-child {
+            padding-right: 0;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2.25em;
+            font-weight: 900;
+        }
+
+        .payment {
+            background: #2c3e50;
+            color: #fff;
+        }
+
+        .shopping-cart .cart-summary {
+            background: #ecf0f1;
+            margin: 0 -15px;
+            padding-top: 0.5em;
+            padding-bottom: 1.5em;
+        }
+
+        .shopping-cart .cart-summary .css-table {
+            text-align: right;
+            width: 100%;
+        }
+
+        .shopping-cart .cart-summary .css-table .css-table-cell {
+            padding-top: 0.125em;
+            padding-bottom: 0.125em;
+
+        }
+
+        .shopping-cart .cart-summary .css-table .css-table-cell:last-of-type {
+            width: 1px;
+        }
+
+        .shopping-cart .cart-summary strong {
+            font-size: 1.5em;
+            line-height: 2em;
+        }
+
+        .shopping-cart ul.cart-items {
+            margin: 0;
+            padding: 0;
+        }
+
+        .shopping-cart ul.cart-items li {
+            list-style: none;
+            width: 100%;
+        }
+
+        .shopping-cart ul.cart-items li .item-name {
+            vertical-align: middle;
+            width: 100%
+        }
+
+        .shopping-cart ul.cart-items li .item-price,
+        .shopping-cart ul.cart-items li .item-quantity {
+            text-align: right;
+            vertical-align: middle;
+            width: 0;
+        }
+
+        .shopping-cart ul.cart-items li .item-thumb {
+            width: 80px;
+        }
+
+        .shopping-cart ul.cart-items li .item-thumb img {
+            border-radius: 50%;
+            height: 60px;
+            vertical-align: middle;
+            width: 60px;
+        }
+
+        .toggle:checked+.lbl-toggle+.collapsible-content {
+            max-height: 70vh;
+            overflow: auto;
+        }
+
+        .toggle:checked+.lbl-toggle::before {
+            transform: rotate(90deg) translateX(-3px);
+        }
+
+        .toggle:checked+.lbl-toggle {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+        .top-section {
+            height: 640px;
+            color: #e0e5f5;
+            background-color: #272727;
+            overflow: hidden;
+        }
+
+        .header-container {
+            height: 400px;
+            width: 400px;
+            border: 4px solid;
+            top: 47%;
+            border-radius: 100%;
+        }
+
+        .header-container:before {
+            content: "";
+            display: false;
+            position: absolute;
+            margin: false;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            border: 2px solid #e0e5f5;
+            border-radius: 100%;
+        }
+
+        banner {
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .bg {
+
+            width: 100%;
+            height: 100%;
+            text-align: center;
+
+        }
+
+        article {
+            font-family: 'Questrial', sans-serif;
+            height: 100%;
+            margin-top: 5vh;
+            width: 100%;
+            z-index: 1;
+            background-color: white;
+        }
+
+        article h2 {
+
+            font-family: 'Lobster', cursive;
+        }
+
+        . h2 {
+            color: #282F35;
+            font-family: 'Josefin Sans', Arial, sans-serif;
+            font-size: 18px;
+            letter-spacing: 1px;
+            margin: 0;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: #666666;
+            font-family: 'Malgun Gothic', Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .acc {
+            margin: 90px 0;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .acc li {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .acc_ctrl {
+            background: #FFFFFF;
+            border: none;
+            border-bottom: solid 1px #F2F2F2;
+            cursor: pointer;
+            display: block;
+            outline: none;
+            padding: 2em;
+            position: relative;
+            text-align: center;
+            width: 100%;
+        }
+
+        .acc_ctrl:before {
+            background: #44596B;
+            content: '';
+            height: 2px;
+            margin-right: 37px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -ms-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            width: 14px;
+        }
+
+        .acc_ctrl:after {
+            background: #44596B;
+            content: '';
+            height: 2px;
+            margin-right: 37px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 14px;
+        }
+
+        .acc_ctrl.active:before {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        .acc_ctrl.active h2,
+        .acc_ctrl:focus h2 {
+            position: relative;
+        }
+
+        .acc_panel {
+            background: #F2F2F2;
+            display: none;
+            overflow: hidden;
+        }
+
+        main {
+            margin-top: 20%;
+            height: 100%;
+            z-index: 1;
+            background-color: white;
+            font-family: 'Questrial', sans-serif;
+            text-align: center;
+        }
+
+        .flex-box {
+            margin-top: 20%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            text-align: center;
+            align-items: center;
+            align-content: center;
+            width: 100%;
+
+
+            overflow: auto;
+            flex-direction: row;
+        }
+
+        .item {
+            width: 33%;
+            height: 55%;
+            margin: 5%;
+
+        }
+
+        .responsive {
+            height: 100%;
+            width: 50%;
+
+        }
+
+        .line {
+            margin-top: 0;
+            margin-bottom: 2vh;
+            border: 50px solid #111;
+            background-color: white;
+
+        }
+
+        aside {
+            margin-top: 10vh;
+            height: 100%;
+            background-color: white;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            overflow: scroll;
+        }
+
+        .button {
+            background-color: #222;
+            /* Green */
+            border: none;
+            color: #00a6ff;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+        }
+
+        .button1 {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .button2:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        /* Cards */
+        .column {
+            height: 200px;
+            margin: 10px;
+            text-align: center;
+            font-size: 2em;
+            -webkit-box-shadow: -7px 11px 25px -9px rgba(0, 0, 0, 1);
+            -moz-box-shadow: -7px 11px 25px -9px rgba(0, 0, 0, 1);
+            box-shadow: -7px 11px 25px -9px rgba(0, 0, 0, 1);
+        }
+
+        .column p {
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+        }
+
+        h6 {
+            font-family: 'Questrial', sans-serif;
+            color: white;
+        }
+
+        .brand {
+            min-height: 3rem;
+            background: #212;
+        }
+
+        .brand-title,
+        .brand-title:hover,
+        .brand-title:focus {
+            color: #fff;
+            font-size: 1.5em;
+            text-align: center;
+            margin-left: 0.6rem;
+            text-transform: uppercase;
+        }
+
+        .img1 {
+            background: url('https://lh3.googleusercontent.com/qqUGnaMnJOS6Tf6VUfvHwNiTRUoW5jBCaQlV77VZi-EwzCd4IYjj8kQIBHqOO9McVinrwaCefZNao2yv-wuCJXyeXz3K-vLna24upHHMocqVTj3rK59pY1lUkfTSK-Dn-84CUi7zKQ');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .img2 {
+            background: url('https://lh3.googleusercontent.com/yLt0wKTFNur6jqXmoPykgbo3F5sJvx7PuE26ujYzLnbIk6H2IWHHrL3FqwazXRvzfNGGwE7dc8rjLG2TI1RpbC8jlHY7lj-2A6Nkr2ZvLN2DgsCi8hpwGmklyeMH1NXTRk-Q-O1_4g');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .img3 {
+            background: url('https://lh3.googleusercontent.com/LRmwh9EfUFuMO8_ISzFUvW5DJQez1TY36Iz4NCr2H0RL5H6-V1Yhtoh1_yIutm5T2xcH4mkW2OxmGwAidOqk1rm3HSC57BQbZoCMV-vXZkBZvxJiQK4Hfu0MCJhMB6uSmMBWKb4YQQ');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .img4 {
+            background: url('https://lh3.googleusercontent.com/3dt3EyTX57IuCdY1K8pLJ6XGYwi3d9o3VTJc1QEcwm0OF1q-9Rha-bNXZ4fMtCwvmtfmwR9YXNlmdOMjL4OnWcst3lbMq7D09702JISua8vhfVIifkQ5cbv7mkLVsqZNslmAiK2Fmg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .img5 {
+            background: url('https://images.unsplash.com/photo-1431492299426-2ea1ce429cc0?crop=entropy&fit=crop&fm=jpg&h=675&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1375');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .flexbox {
+            margin-top: 20%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            text-align: center;
+            align-items: stretch;
+            align-content: center;
+            width: 100%;
+            background-color: white;
+
+            overflow: auto;
+            flex-direction: row;
+        }
+
+        .box {
+            width: 33%;
+            height: 100%;
+            margin: 5%;
+            border-bottom-style: 4px solid black;
+
+
+        }
+
+        button {
+            background: #e04646;
+            padding: 5px;
+            font-weight: bold;
+            border: 0;
+        }
+
+        .menu .info img {
+            width: 100%;
+            height: 40vh;
+            transition: 2s
+        }
+
+        .info:hover img {
+            transform: scale(2);
+        }
+
+        .menu .info {
+            overflow: hidden;
+            position: relative;
+            margin-top: 100px;
+        }
+
+
+        /* hover 1*/
+        h3 {
+            margin-top: 20%
+        }
+
+        .caption {
+            background: rgba(0, 0, 0, 0.75);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.6s;
+            color: #fff;
+            transform: skew(50deg);
+            opacity: 0
+        }
+
+        .info:hover .caption {
+            transform: skew(0deg);
+            opacity: 1
+        }
+
+        footer {
+            background: #373737;
+            font-family: 'Questrial', sans-serif;
+            width: 100%;
+        }
+
+        .footer-list-top {
+            width: 33.333%;
+        }
+
+        .footer-list-top>li {
+            text-align: center;
+            padding-bottom: 10px;
+            text-decoration: none;
+            color: white;
+            list-style: none;
+        }
+
+        .flex-container {
+            width: 100%;
+            display: -webkit-flex;
+            display: flex;
+            justify-content: space-around;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-align-items: center;
+            align-items: center;
+            -webkit-align-content: center;
+            align-content: center;
+            padding: 10px auto;
+            margin: 10px auto;
+        }
+
+        .item {
+
+            width: 32.2vw;
+            height: 25vh;
+            padding: 10px auto;
+
+        }
+
+        .footer-list-header {
+            padding: 10px 0 5px 0;
+            color: #fff;
+            font: 2.3vw;
+            font-family: 'Sacramento', cursive
+        }
+
+        .footer-list-anchor {
+            list-style: none;
+            font: 1.3em;
+            font-family: 'Questrial', sans-serif;
+        }
+
+        .footer-social-section {
+            width: 100%;
+            -webkit-box-align: center;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+            margin-top: 5px;
+        }
+
+        .footer-social-section::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 50%;
+            left: 10px;
+            border-top: 1px solid #ccc;
+            width: calc(100% - 20px);
+        }
+
+        .footer-social-overlap {
+            position: relative;
+            z-index: 2;
+            background: #373737;
+            padding: 0 20px;
+        }
+
+        .footer-social-connect {
+            display: -webkit-box;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            font: 3.5em "Oswald", sans-serif;
+            color: #fff;
+        }
+
+        .footer-social-small {
+            font-size: 0.6em;
+            padding: 0px 20px;
+        }
+
+        .footer-social-overlap>a {
+            font-size: 3em;
+        }
+
+        .footer-social-overlap>a:not(:first-child) {
+            margin-left: 0.38em;
+        }
+
+        .footer-bottom-section {
+            width: 100%;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            margin-top: 10px;
+        }
+
+        .footer-bottom-section>div:first-child {
+            margin-right: auto;
+        }
+
+        .footer-bottom-wrapper {
+            font-size: 1.5em;
+            color: #fff;
+        }
+
+        .footer-address {
+            display: inline;
+            font-style: normal;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .footer-list-header {
+                font-size: 2em;
+            }
+
+            .footer-list-anchor {
+                font-size: 1.1em;
+            }
+
+            .footer-social-connect {
+                font-size: 2.5em;
+            }
+
+            .footer-social-overlap>a {
+                font-size: 2.24em;
+            }
+
+            .footer-bottom-wrapper {
+                font-size: 1.3em;
+            }
+        }
+
+        @media only screen and (max-width: 568px) {
+            main {}
+
+            .footer-list-top {
+                width: 100%;
+            }
+
+            .footer-list-header {
+                font-size: 3em;
+            }
+
+            .footer-list-anchor {
+                font-size: 1.5em;
+            }
+
+            .footer-social-section {
+                -webkit-box-pack: center;
+                justify-content: center;
+            }
+
+            .footer-social-section::after {
+                top: 25%;
+            }
+
+            .footer-social-connect {
+                margin-bottom: 10px;
+                padding: 0 10px;
+            }
+
+            .footer-social-overlap {
+                display: -webkit-box;
+                display: flex;
+                -webkit-box-pack: center;
+                justify-content: center;
+            }
+
+            .footer-social-icons-wrapper {
+                width: 100%;
+                padding: 0;
+            }
+
+            .footer-social-overlap>a:not(:first-child) {
+                margin-left: 20px;
+            }
+
+            .footer-bottom-section {
+                padding: 0 5px 10px 5px;
+            }
+
+            .footer-bottom-wrapper {
+                text-align: center;
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .footer-social-overlap>a {
+                margin: auto;
+            }
+
+            .footer-social-overlap>a:not(:first-child) {
+                margin-left: 0;
+            }
+
+            .footer-bottom-rights {
+                display: block;
+            }
+        }
+
+        @media only screen and (max-width: 320px) {
+            .footer-list-header {
+                font-size: 2.2em;
+            }
+
+            .footer-list-anchor {
+                font-size: 1.2em;
+            }
+
+            .footer-social-connect {
+                font-size: 2.4em;
+            }
+
+            .footer-social-overlap>a {
+                font-size: 2.24em;
+            }
+
+            .footer-bottom-wrapper {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <!-- PAGE STUFF -->
+
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+
+
+        <span style="font-family: 'Sacramento', cursive" ;"font-size:5vw;cursor:pointer" onclick="openNav()">&#9776;
+            Quality Air</span>
+
+
+
+        <div class="wrap-collabsible">
+            <input id="collapsible" class="toggle" type="checkbox">
+            <label for="collapsible" class="lbl-toggle"><i class='fas fa-cart-arrow-down'
+                    style='font-size:48px;color:#00a6ff'></i></label>
+            <div class="collapsible-content">
+                <div class="content-inner">
+                    <div class="checkout-modal">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6 shopping-cart">
+                                    <h1 class="text-center">Cart</h1>
+                                    <ul class="cart-items css-table">
+                                        <li class="css-table-row">
+                                            <div class="css-table-cell item-thumb">
+                                                <img class="responsive"
+                                                    src="https://lh3.googleusercontent.com/Kpvenr1qWYEusUkmDwxmwGk6v3I60qJnFA0wXPOTfvPfrgi1q-SKLunw8KKgtjfYL6UO0kWqF1uGPl4_n59eLEu8ki86tppjVYQHcoq9fQMVpQeq_ENuo9ihUNVmpHE9dljuO0UiKw"
+                                                    width="600" height="315" />
+                                                <div class="css-table-cell item-name">
+                                                    <strong>Dyson</strong>
+                                                </div>
+                                                <div class="css-table-cell item-quantity">x1</div>
+                                                <div class="css-table-cell item-price">$339.95</div>
+                                        </li>
+                                        <li class="css-table-row">
+                                            <div class="css-table-cell item-thumb">
+                                                <img class="responsive"
+                                                    src="https://lh3.googleusercontent.com/JhNaykiP-BmNe9heETL_K30SP129g1JMDvd73v9eBMLuMOBLAzvQDdEI33YDSlfN3f_spXlYQ75bAqQmYwIJH4Y3uZFBqebVmQDarTD4m5cTge8EEGSpZ0c3FHiLX0Rrkjx3f8C_xg"
+                                                    width="600" height="500" />
+                                                <div class="css-table-cell item-name">
+                                                    <strong>Dyson Air Purifier</strong>
+                                                </div>
+                                                <div class="css-table-cell item-quantity">x1</div>
+                                                <div class="css-table-cell item-price">$355.50</div>
+                                        </li>
+                                        <li class="css-table-row">
+                                            <div class="css-table-cell item-thumb">
+                                                <img class="responsive"
+                                                    src="https://lh3.googleusercontent.com/1y036bInMgoLoQ5i6sY8qeuXPv9A45W0j4Hk4pSR8WoEbF1UyookYp29mPMy0VaVj-beHmI5pgr7RfrCVdKve5_sTUMYDWvByi-VLT5pEHSf9xzJ9rSmFXHp1ZkMwcCqusCoEUxVKg"
+                                                    width="600" height="315" />
+                                                <div class="css-table-cell item-name">
+                                                    <strong>Dyson</strong>
+                                                </div>
+                                                <div class="css-table-cell item-quantity">x1</div>
+                                                <div class="css-table-cell item-price">$324.00</div>
+                                        </li>
+                                        <li class="css-table-row">
+                                            <div class="css-table-cell item-thumb">
+                                                <img class="responsive"
+                                                    src="https://lh3.googleusercontent.com/Kpvenr1qWYEusUkmDwxmwGk6v3I60qJnFA0wXPOTfvPfrgi1q-SKLunw8KKgtjfYL6UO0kWqF1uGPl4_n59eLEu8ki86tppjVYQHcoq9fQMVpQeq_ENuo9ihUNVmpHE9dljuO0UiKw"
+                                                    width="600" height="315" />
+                                                <div class="css-table-cell item-name">
+                                                    <strong>Dyson</strong>
+                                                </div>
+                                                <div class="css-table-cell item-quantity">x1</div>
+                                                <div class="css-table-cell item-price">$454.95</div>
+                                        </li>
+                                    </ul>
+                                    <div class="cart-summary container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="css-table">
+                                                    <div class="css-table-row">
+                                                        <em class="css-table-cell">Subtotal: </em>
+                                                        <em class="css-table-cell">$1,474.40</em>
+                                                    </div>
+                                                    <div class="css-table-row">
+                                                        <em class="css-table-cell">Tax: </em>
+                                                        <em class="css-table-cell">$19.21</em>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="css-table">
+                                                    <div class="css-table-cell"><strong>Total:</strong></div>
+                                                    <div class="css-table-cell"><strong>$1,493.61</strong></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 payment">
+                                    <h2 class="text-center">Checkout</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logo">
+            <h1 style="font-size:8vw;">Quality Air</h1>
+        </div>
+        <hr class="style3">
+    </nav>
+
+
+
+    <banner>
+        <div class="bg">
+
+            <img
+                src="https://lh3.googleusercontent.com/OZ7iCyWsgeuRwNA2Qs_rRxiatJLPq15lF-kCiFWdCAO7ut5Ozv_h4bXD5_Pv4cCNib6_e14CO0HslgDch87-gOEJIL_iShfergfVOTjD21tprijRriCewwK7Ci_gByrowxlsR5RUnA" />
+        </div>
+    </banner>
+    <hr class="line">
+    <article>
+        <div class="container">
+            <ul class="acc">
+                <li>
+                    <button class="acc_ctrl">
+                        <h2>Top Reasons To Get An Air Purifier</h2>
+                    </button>
+                    <div class="acc_panel">
+                        <p style="font-size:3vw;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro
+                            quaerat nesciunt natus cupiditate deleniti perspiciatis omnis cumque blanditiis voluptates
+                            provident?</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="acc_ctrl">
+                        <h2>COVID:19</h2>
+                    </button>
+                    <div class="acc_panel">
+                        <p style="font-size:3vw;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta
+                            dolore ducimus, ratione labore laudantium vitae non sapiente rerum odio aspernatur possimus
+                            voluptatem rem voluptatum iusto aliquam vero obcaecati illum accusamus quod. Culpa officia
+                            rerum quis soluta tenetur, quia vero maxime!</p>
+                    </div>
+                </li>
+                <li>
+                    <button class="acc_ctrl">
+                        <h2>Made In USA</h2>
+                    </button>
+                    <div class="acc_panel">
+                        <p style="font-size:3vw;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit aliquam
+                            aut, culpa rem quo praesentium error dolore, labore pariatur deleniti, incidunt consectetur.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <button class="button button1">Shop Now</button>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    </article>
+
+    <main>
+        <hr class="line">
+        <h2 style="font-size:4vw;">What's your sure quality concern</h2>
+        <div class="flex-box">
+            <div class="item"><img class="responsive"
+                    src="https://lh3.googleusercontent.com/WV-PmzJd8Lzd73qZUHw7qxRHvs5lmXUpKyuH4gVun4CiVJ6Vf3Nc02RDxhI2N_Q8vq5SJUAG-N7WAYuU5OtHOYeS3f7n2ptd3-sgd-a0aAIB81GnuoYFfE6MvcVzUlVeB7Bg2yFccQ"
+                    width="600" height="315" />
+                <p style="font-size:3vw;">Allergens</p>
+            </div>
+            <div class="item"><img class="responsive"
+                    src="https://lh3.googleusercontent.com/eGuhVl16WGiRwxGQpeM7dsbQGbuDdIM0yXT0Oi8qEtYgACgpzSvSFAs9hMKvj6yyhwI9tq9WNW4T2PIvck4o9tt6iKrYvnKkHzZrEykVVixX1D0U3HhNJO1hX7wcmHG2nutO6MCIhQ"
+                    width="600" height="315" />
+                <p style="font-size:3vw;">Asthma</p>
+            </div>
+            <div class="item"><img class="responsive"
+                    src="https://lh3.googleusercontent.com/YHdYSww7etQjJOnb3-HQBmDKSLpsPvW2VQMKqlckkNkCUKVgN8NV1LqI3UwSIHbjOunhB9E0pxnqeBUvHwsPq3J1e9F2yYXkZI7E8amXFSSXP1jVBrhFaZQtHKabWQcLKtBiC7L5tw"
+                    width="600" height="315" />
+                <p style="font-size:3vw;">Chemicals</p>
+            </div>
+            <div class="item"><img class="responsive"
+                    src="https://lh3.googleusercontent.com/P4itMuSLtWAQ82-kd4T4Of-AOHtXBBtrYtZjBVmOBT-RsJhw96b59ctFnextdVhWTqasiZg-q61iXzfG2rhXYknhZkLIjTPddD4Mvn8Net1Jyxhj0zjfYF-Wjcdh-9TrPcm_l26LqQ"
+                    width="600" height="315" />
+                <p style="font-size:3vw;">Dust</p>
+            </div>
+
+            <div class="item"><img class="responsive"
+                    src="https://lh3.googleusercontent.com/nCd2wcQNq-tY7ikpaYJjXPfosfWMyaQHsjZ0IlKWuKNo2qzsQHKhPFhst0HbKoWsFjQ2WtMj6g-7E5YP49oZzq5ClIymihZ81O-ghy1sYVP_xTOyr_Nvz5G0TlANX9_RvBmZen4qcw"
+                    width="600" height="315" />
+                <p style="font-size:3vw;">Germs</p>
+            </div>
+
+            <div class="item"><img class="responsive"
+                    src="https://lh3.googleusercontent.com/fKPtTkVZIjXwXMPUwM_imqBKHBeZO7aip65wtVaKDxr6sukc6kUv5znont87W__uHgdW5pKfBiyU55dxm9pKcQdjnHeSAp4X_FUH1TVNTPTG40_axX-5zR9pgC5x-UkR3ErNQHYfyQ"
+                    width="600" height="315" />
+                <p style="font-size:3vw;">Mold</p>
+            </div>
+            <div class="item"><img class="responsive"
+                    src="https://lh3.googleusercontent.com/KmzEgrkjhdTJVRT5nLvEfz5p5nUp_uC15H0MLtqDxp-XU9gsg3m2tj7PQCf6Nl9oZO0-Bu9yMzugWoIT984Fa3MUhEr0pdwgGuiJfUUXD8k9SAR0khncyleHLEUHEgoe3hCVsKdalQ"
+                    width="600" height="315" />
+                <p style="font-size:3vw;">Pets</p>
+            </div>
+            <div class="item"><img class="responsive"
+                    src="https://lh3.googleusercontent.com/w-XyN65-XZd-Gz9QuUlWTeHxtv0FwgzQiYW1WI2045ioEo8G7M9PQK8K8CbF1Vm0MtqlnAJmP3OShey4AjeDEvS296z558oQDwxsRKYOx7XsSrFqYt4-zMtif0MYv8WPyEsnFzrljA"
+                    width="600" height="315" />
+                <p style="font-size:3vw;">Smoke</p>
+            </div>
+        </div>
+        <button class="button button1">Shop Now</button>
+    </main>
+    <aside>
+        <hr class="line">
+        <section class="section cards">
+            <div class="container">
+                <div class="columns is-multiline">
+                    <div class="column img1 toaster is-quarter">
+                        <h6 style="font-size:3vw;">Technology
+                            By going to greater lengths, we engineered a better filter.</h6>
+                    </div>
+                    <div class="column img2 xpro2 is-quarter">
+                        <h6 style="font-size:3vw;">Removes 99.95% of allergens and pollutants as small as 0.1 microns
+                            from the air.</h6>
+                    </div>
+                    <div class="column img3 willow is-quarter">
+                        <h6 style="font-size:3vw;">Purifying fan when you need it</h6>
+                    </div>
+
+
+                    <div class="column img5 reyes is-quarter">
+                        <h6 style="font-size:3vw;">Dyson Air Purifier</h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </aside>
+
+    <div class="flexbox">
+        <div class="box">
+
+
+            <section class="menu text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <div class="info">
+                                <img class="responsive"
+                                    src="https://lh3.googleusercontent.com/gv5M9xmYH5TVOMzS6iZVFqCAn8Eh6RcWw9cDGHxMWD8Z3mJtu4m_ur-G1W1pYkyeeCCR7D7BAxbmSnNU_3KyUbNLkfvQ9h51uylrvfV6AcOLuhSSHVJeB54OEihbpi4FeZ-ioh4sqg"
+                                    width="600" height="315" />
+                                <div class="caption">
+                                    <h3 style="font-size 4vw;">dyson</h3>
+                                    <p style="font-size:3vw;">4 Lamb chops, trimmed 4 Small rump Steaks 4 thick and
+                                        meaty Butcher’s sausages Butter, melted.</p>
+                                    <button>50% Off 40$</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+            </section>
+        </div>
+        <div class="box">
+
+
+            <section class="menu text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <div class="info">
+                                <img class="responsive"
+                                    src="https://lh3.googleusercontent.com/1y036bInMgoLoQ5i6sY8qeuXPv9A45W0j4Hk4pSR8WoEbF1UyookYp29mPMy0VaVj-beHmI5pgr7RfrCVdKve5_sTUMYDWvByi-VLT5pEHSf9xzJ9rSmFXHp1ZkMwcCqusCoEUxVKg"
+                                    width="600" height="315" />
+                                <div class="caption">
+                                    <h3 style="font-size:4vw;">Mix dyson</h3>
+                                    <p style="font-size:3vw;">air purifier</p>
+                                    <button>50% Off 40$</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+            </section>
+        </div>
+        <div class="box">
+            <section class="menu text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <div class="info">
+                                <img class="responsive"
+                                    src="https://lh3.googleusercontent.com/_GvSkNOsDPsyI6CYe6zGUhGFO2ZD9LvRAeyJGrPOPu9aQA8WTiP8fLWADr0y1v7MNip3SCh2ip2rEq6vmBCRKyfWweQpxSRjeoz7tNNiR9kKfSv6tIE9N0ZDNdyTUj4NLDp4CvWT_A"
+                                    width="600" height="315" />
+                                <div class="caption">
+                                    <h3 style="font-size:4vw;">Mix dyson</h3>
+                                    <p style="font-size:3vw;">air purifier</p>
+                                    <button>50% Off 40$</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+            </section>
+        </div>
+        <div class="box">
+            <section class="menu text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <div class="info">
+                                <img class="responsive"
+                                    src="https://lh3.googleusercontent.com/Kpe6bwHVp1lEsoAXo-DUG4HRla155FieK3nD30CQDMKSiD0zX1UIMPm-UqI6Nttd04kLJrKMfsb2-V4Un2BdlDovIoCm_FBy5U-CWsk9AuyCHbD0jMOPQPnmAxRQnoZixvM68YPCiA"
+                                    width="600" height="315" />
+                                <div class="caption">
+                                    <h3 style="font-size:4vw;"> dyson</h3>
+                                    <p style="font-size:3vw;">air purifier</p>
+                                    <button>50% Off 40$</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+            </section>
+        </div>
+        <div class="box">
+            <section class="menu text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <div class="info">
+                                <img class="responsive"
+                                    src="https://lh3.googleusercontent.com/Kpvenr1qWYEusUkmDwxmwGk6v3I60qJnFA0wXPOTfvPfrgi1q-SKLunw8KKgtjfYL6UO0kWqF1uGPl4_n59eLEu8ki86tppjVYQHcoq9fQMVpQeq_ENuo9ihUNVmpHE9dljuO0UiKw"
+                                    width="600" height="315" />
+                                <div class="caption">
+                                    <h3 style="font-size:4vw;">Mix </h3>
+                                    <p style="font-size:3vw;">air purifier.</p>
+                                    <button>50% Off 40$</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+            </section>
+        </div>
+        <div class="box">
+            <section class="menu text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <div class="info">
+                                <img class="responsive"
+                                    src="https://lh3.googleusercontent.com/NiN6kPdiFUJGQS12WtRO_ZnbaUJfnb2Dx7B3so-cDsafKNCQsp2GdHGULZnWGRy1ExXLiChKacDBlqABPapz1Q7GVb3k57ebWSrwvqCuEuSp0q8hujROf_UwKRRNxESufithhYftMg"
+                                    width="600" height="315" />
+                                <div class="caption">
+                                    <h3 style="font-size:4vw;">dyson</h3>
+                                    <p style="font-size:3vw;">air purifier</p>
+                                    <button>50% Off 40$</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+            </section>
+        </div>
+        <div class="box">
+            <section class="menu text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <div class="info">
+                                <img class="responsive"
+                                    src="https://lh3.googleusercontent.com/Kpvenr1qWYEusUkmDwxmwGk6v3I60qJnFA0wXPOTfvPfrgi1q-SKLunw8KKgtjfYL6UO0kWqF1uGPl4_n59eLEu8ki86tppjVYQHcoq9fQMVpQeq_ENuo9ihUNVmpHE9dljuO0UiKw"
+                                    width="600" height="315" />
+                                <div class="caption">
+                                    <h3 style="font-size:4vw;">Mix Grill</h3>
+                                    <p style="font-size:3vw;">air purifier</p>
+                                    <button>50% Off 40$</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+            </section>
+        </div>
+        <div class="box">
+            <section class="menu text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <div class="info">
+                                <img class="responsive"
+                                    src="https://lh3.googleusercontent.com/JhNaykiP-BmNe9heETL_K30SP129g1JMDvd73v9eBMLuMOBLAzvQDdEI33YDSlfN3f_spXlYQ75bAqQmYwIJH4Y3uZFBqebVmQDarTD4m5cTge8EEGSpZ0c3FHiLX0Rrkjx3f8C_xg"
+                                    width="600" height="500" />
+                                <div class="caption">
+                                    <h3 style="font-size:4vw;">dysonl</h3>
+                                    <p style="font-size:3vw;">air purifier</p>
+                                    <button>50% Off 40$</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+            </section>
+        </div>
+    </div>
+
+
+    <footer>
+        <footer class="flex-rw">
+
+            <ul class="footer-list-top">
+                <li>
+                    <h4 class="footer-list-header">About Pavilion</h4>
+                </li>
+                <li><a href='/shop/about-mission' class="generic-anchor footer-list-anchor"
+                        itemprop="significantLink">GET TO KNOW US</a></li>
+                <li><a href='/promos.html' class="generic-anchor footer-list-anchor"
+                        itemprop="significantLink">PROMOS</a></li>
+                <li><a href='/retailers/new-retailers.html' class="generic-anchor footer-list-anchor"
+                        itemprop="significantLink">BECOME A RETAILER</a></li>
+
+                <li><a href='/job-openings.html' itemprop="significantLink"
+                        class="generic-anchor footer-list-anchor">JOB OPENINGS</a></li>
+
+                <li><a href='/shop/about-show-schedule' class="generic-anchor footer-list-anchor"
+                        itemprop="significantLink">EVENTS</a></li>
+            </ul>
+            <ul class="footer-list-top">
+                <li>
+                    <h4 class="footer-list-header">The Gift Selection</h4>
+                </li>
+
+
+                <li><a href='/Angels/cat/id/70' class="generic-anchor footer-list-anchor">ANGEL FIGURINES</a></li>
+                <li><a href='/Home-Decor/cat/id/64' class="generic-anchor footer-list-anchor">HOME DECOR</a></li>
+                <li><a href='/Mugs/cat/id/32' class="generic-anchor footer-list-anchor">MUGS</a></li>
+                <li><a href='/Pet-Lover/cat/id/108' class="generic-anchor footer-list-anchor">PET LOVER</a></li>
+                <li><a href='/Ladies-Accessories/cat/id/117' class="generic-anchor footer-list-anchor"
+                        target="_blank">HANDBAGS & JEWELRY</a></li>
+            </ul>
+            <ul class="footer-list-top">
+                <li id='help'>
+                    <h4 class="footer-list-header">Please Help Me</h4>
+                </li>
+                <li><a href='/shop/about-contact' class="generic-anchor footer-list-anchor"
+                        itemprop="significantLink">CONTACT</a></li>
+                <li><a href='/faq.html' class="generic-anchor footer-list-anchor" itemprop="significantLink">FAQ</a>
+                </li>
+                <li id='find-a-store'><a href='/shop/store-locator' class="generic-anchor footer-list-anchor"
+                        itemprop="significantLink">STORE LOCATOR</a></li>
+                <li id='user-registration'><a href='/shop/user-registration?URL='
+                        class="generic-anchor footer-list-anchor" itemprop="significantLink">NEW USERS</a></li>
+                <li id='order-tracking'><a href='/shop/order-status' itemprop="significantLink"
+                        class="generic-anchor footer-list-anchor">ORDER STATUS</a></li>
+            </ul>
+            <section class="footer-social-section flex-rw">
+                <span class="footer-social-overlap footer-social-connect">
+                    CONNECT <span class="footer-social-small">with</span> US
+                </span>
+                <span class="footer-social-overlap footer-social-icons-wrapper">
+                    <a href="https://www.pinterest.com/paviliongift/" class="generic-anchor" target="_blank"
+                        title="Pinterest" itemprop="significantLink"><i class="fa fa-pinterest"></i></a>
+                    <a href="https://www.facebook.com/paviliongift" class="generic-anchor" target="_blank"
+                        title="Facebook" itemprop="significantLink"><i class="fa fa-facebook"></i></a>
+                    <a href="https://twitter.com/PavilionGiftCo" class="generic-anchor" target="_blank" title="Twitter"
+                        itemprop="significantLink"><i class="fa fa-twitter"></i></a>
+                    <a href="http://instagram.com/paviliongiftcompany" class="generic-anchor" target="_blank"
+                        title="Instagram" itemprop="significantLink"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCYgUODvd0qXbu_LkUWpTVEg" class="generic-anchor"
+                        target="_blank" title="Youtube" itemprop="significantLink"><i class="fa fa-youtube"></i></a>
+                    <a href="https://plus.google.com/+Paviliongift/posts" class="generic-anchor" target="_blank"
+                        title="Google Plus" itemprop="significantLink"><i class="fa fa-google-plus"></i></a>
+                </span>
+            </section>
+            <section class="footer-bottom-section flex-rw">
+                <div class="footer-bottom-wrapper">
+                    <i class="fa fa-copyright" role="copyright">
+
+                    </i> 2019 Pavilion in <address class="footer-address" role="company address">Bergen, NY</address>
+                    <span class="footer-bottom-rights"> - All Rights Reserved - </span>
+                </div>
+                <div class="footer-bottom-wrapper">
+                    <a href="/terms-of-use.html" class="generic-anchor" rel="nofollow">Terms</a> | <a
+                        href="/privacy-policy.html" class="generic-anchor" rel="nofollow">Privacy</a>
+                </div>
+            </section>
+        </footer>
+        <div class="rela-block spacer"></div>
+        <script>
+            let myLabels = document.querySelectorAll('.lbl-toggle');
+
+            Array.from(myLabels).forEach(label => {
+                label.addEventListener('keydown', e => {
+                    // 32 === spacebar
+                    // 13 === enter
+                    if (e.which === 32 || e.which === 13) {
+                        e.preventDefault();
+                        label.click();
+                    };
+                });
+            });
+        </script>
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "100%";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
+        <script>
+            $(function () {
+                $('.acc_ctrl').on('click', function (e) {
+                    e.preventDefault();
+                    if ($(this).hasClass('active')) {
+                        $(this).removeClass('active');
+                        $(this).next()
+                            .stop()
+                            .slideUp(300);
+                    } else {
+                        $(this).addClass('active');
+                        $(this).next()
+                            .stop()
+                            .slideDown(300);
+                    }
+                });
+            });
+        </script>
+        <script>
+            'use strict';
+
+            (function () {
+                //Cache elements for use
+                var hamburger = document.getElementById('menu');
+                var s = document.getElementById('search');
+                var likes = document.getElementById('likesCounter');
+                var submit = document.getElementById('submit');
+                var likes = document.getElementById('parent');
+
+                //Event Handlers
+                var search = s.addEventListener('click', searchHandler);
+                var submitVal = submit.addEventListener('click', onSubmit);
+                var likesEvent = likes.addEventListener('click', likesHandler);
+
+                //Handler Logic
+
+                function searchHandler(e) {
+                    var sr = document.getElementById('search-bar');
+
+                    if (sr.style.display === 'none' && submit.style.display === 'none') {
+                        sr.style.display = 'block';
+                        submit.style.display = 'block';
+                    } else {
+                        sr.style.display = 'none';
+                        submit.style.display = 'none';
+                    }
+                }
+
+                function onSubmit() {
+                    var inputVal = document.getElementById('search-bar').value;
+                    var arrList = [];
+                    document.getElementById('search-bar').value = "";
+                }
+
+                function likesHandler(e) {
+                    e.preventDefault();
+                    if (e.target.nodeName === "SPAN") {
+                        var currentNum = e.target.innerText;
+                        var currentId = e.target.id;
+                        likesIncrement(currentNum, currentId);
+                    }
+                }
+
+                function likesIncrement(currentNum, currentId) {
+                    currentNum = currentNum.replace(/,/g, "");
+                    currentNum = parseInt(currentNum);
+                    currentNum++;
+                    currentNum = String(currentNum);
+                    currentNum = numberWithCommas(currentNum);
+                    document.getElementById(currentId).innerText = currentNum;
+                }
+
+                function numberWithCommas(likes) {
+                    return likes.replace(/(.)(?=(.{3})+$)/g, "$1,");
+                }
+
+            }());
+        </script>
+</body>
+
+</html>

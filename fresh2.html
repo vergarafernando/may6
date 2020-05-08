@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Resets */
+        html,
+        body,
+        nav,
+        p,
+        ul,
+        ul li,
+        .nav>li>a,
+        .social-btns>li>a,
+        form,
+        textarea {
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .responsive {
+            border-radius: 500px;
+            width: 200px;
+            height: 300px;
+
+        }
+
+        a,
+        a:hover,
+        a:active,
+        a:visited {
+            color: inherit;
+            text-decoration: none !important;
+            background: none !important;
+            outline: none;
+        }
+
+        button,
+        button:active,
+        input {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        button,
+        button:active,
+        input,
+        textarea {
+            outline: none;
+            background: none;
+            border: none;
+            color: inherit;
+        }
+
+        /* Bootstrap Changes */
+        .container {}
+
+        @media (min-width: 520px) and (max-width: 767px) {
+            .container {
+                width: 500px;
+            }
+        }
+
+        .me {
+
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
+
+        }
+
+        .nav>.header__nav__item>a:hover {
+            background: none;
+        }
+
+        .nav>.header__nav__item>a {
+            display: inline;
+        }
+
+        /* Generic Styles & Utility */
+
+        .js-dis {
+            display: none;
+        }
+
+        .text-bold {
+            font-family: 'Raleway';
+            font-weight: 700;
+        }
+
+        a.global-button,
+        .global-button,
+        .heading,
+        .header__nav {
+            font-size: 1.7em;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        a.global-button,
+        .global-button,
+        .heading {
+            text-transform: uppercase;
+            color: #51e6a6;
+        }
+
+        .heading {
+            margin: 0;
+            margin-bottom: 2em;
+        }
+
+        .header__social-btns>li>a:hover,
+        .filters__label:hover {
+            color: #51e6a6;
+        }
+
+        .header__social-btns>li>a,
+        .filters__label,
+        .credit-link {
+            transition: all 250ms linear;
+        }
+
+        .global-button::before {
+            content: "";
+            height: 1em;
+            width: 1em;
+            display: inline-block;
+            position: relative;
+            top: .2em;
+            bottom: 0;
+            background: url('https://eevu.github.io/img/arrow.svg') no-repeat;
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .global-button.rotated::before {
+            transform: rotate(90deg);
+            left: -.5em;
+        }
+
+        /* ----- Page ----- */
+        html,
+        body {
+            font-size: 100%;
+            font-family: 'Muli', sans-serif;
+            color: #6c6753;
+        }
+
+        /*** Header ***/
+
+        .header {
+            padding: 1.5em 6% 1em;
+            position: fixed;
+            width: 100%;
+            background: #fff;
+            z-index: 10;
+        }
+
+        @media (min-width: 920px) {
+            .header {
+                padding-left: 6em;
+                padding-right: 6em;
+            }
+        }
+
+        /* Nav */
+
+        .header__nav,
+        .header__social-btns {
+            display: inline-block;
+            margin-right: -4px;
+            /* solves inline-block whitespace issue */
+            width: 50%;
+            vertical-align: baseline;
+        }
+
+        .header__nav {
+            line-height: .9em;
+        }
+
+        .header__nav__item>a {
+            position: relative;
+        }
+
+        .header__nav__item.is-active>a {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+        }
+
+        .header__nav__item.is-active>a:hover {
+            color: currentColor;
+        }
+
+        .header__nav__item>a,
+        .header__nav__item>a::before {
+            transition: all 350ms ease;
+        }
+
+        .header__nav__item>a:hover {
+            color: #51e6a6;
+        }
+
+        .header__nav__item>a::before {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            overflow: visible;
+            left: -7em;
+        }
+
+        @media (max-width: 919px) {
+            .header__nav__item>a::before {
+                display: none;
+            }
+        }
+
+        .header__nav__item>a[data-ref='about']::before {
+            content: url('https://eevu.github.io/img/about_icon.svg');
+        }
+
+        .header__nav__item>a[data-ref='portfolio']::before {
+            content: url('https://eevu.github.io/img/portfolio_icon.svg');
+        }
+
+        .header__nav__item>a[data-ref='contact']::before {
+            content: url('https://eevu.github.io/img/contact_icon.svg');
+        }
+
+        .header__nav__item>a:hover::before,
+        .header__nav__item.is-active>a::before {
+            left: -2.5em;
+        }
+
+        /* Collapsible Navigation */
+        .nav-toggle-wrapper {
+            display: none;
+            height: 2em;
+        }
+
+        .nav-toggle-btn {
+            display: inline;
+            position: relative;
+            height: 2em;
+            width: 2em;
+            cursor: pointer;
+        }
+
+        .nav-toggle-btn>.line {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: .25em;
+            background-color: #6c6753;
+            transform: translateY(-50%);
+            transform-origin: 50% 50%;
+            transition: all 200ms linear;
+        }
+
+        .nav-toggle-btn>.line:first-child {
+            transform: translateY(-250%);
+        }
+
+        .nav-toggle-btn>.line:last-child {
+            transform: translateY(150%);
+        }
+
+        /* icon animations */
+
+        .nav-toggle-btn:hover>.line:first-child {
+            transform: translateY(-300%);
+        }
+
+        .nav-toggle-btn:hover>.line:last-child {
+            transform: translateY(200%);
+        }
+
+        /* change icon appearance on expanded nav */
+        .nav-toggle-wrapper.expand>.nav-toggle-btn>.line:first-child {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .nav-toggle-wrapper.expand>.nav-toggle-btn>.line:nth-child(2) {
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .nav-toggle-wrapper.expand>.nav-toggle-btn>.line:last-child {
+            transform: translateY(-50%) rotate(-45deg);
+        }
+
+        @media (max-width: 768px) {
+            .header__nav {
+                visibility: hidden;
+                opacity: 0;
+                position: absolute;
+                top: 2em;
+                left: 0;
+                height: calc(100vh - 2em);
+                width: 100%;
+                text-align: center;
+                line-height: 1.5em;
+                background-color: #fff;
+                padding-bottom: 2em;
+                overflow: hidden;
+                transition: opacity 400ms ease-out;
+
+            }
+
+            .nav-toggle-wrapper {
+                display: inline-block;
+                width: 50%;
+                margin-right: -4px;
+            }
+
+            .nav-toggle-wrapper.expand+.header__nav {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            .header__nav>.nav {
+                position: absolute;
+                top: calc(50% - 2em);
+                left: 0;
+                width: 100%;
+                transform: translateY(-50%);
+            }
+        }
+
+        /* Social Links */
+
+        .header__social-btns {
+            text-align: right;
+        }
+
+        .header__social-btns>li {
+            display: inline-block;
+        }
+
+        .header__social-btns>li>a {
+            position: relative;
+            padding: 5px;
+        }
+
+
+        /* --- Sections --- */
+
+        #about,
+        #portfolio,
+        #contact {
+            padding-top: 8.5em;
+        }
+
+
+        /*** About Section ***/
+        #about {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #about .wrapper {
+            margin-top: 50%;
+            max-width: 80%;
+            margin: auto;
+            margin-right: 10%
+        }
+
+        @media (min-width: 768px) {
+            #about .wrapper {
+                margin-right: 24%;
+            }
+        }
+
+        .about__intro {
+            border-left: 2px solid;
+            padding-left: 2.2em;
+            margin-bottom: 1em;
+            max-width: 25em;
+        }
+
+        #about:hover .global-button.rotated::before {
+            animation: move_arrow_v 2500ms ease-in infinite forwards;
+        }
+
+        @keyframes move_arrow_v {
+            0% {
+                transform: rotate(90deg) translateX(0px);
+            }
+
+            50% {
+                transform: rotate(90deg) translateX(0px);
+            }
+
+            60% {
+                transform: rotate(90deg) translateX(8px);
+            }
+
+            70% {
+                transform: rotate(90deg) translateX(0px);
+            }
+
+            80% {
+                transform: rotate(90deg) translateX(8px);
+            }
+
+            90% {
+                transform: rotate(90deg) translateX(0px);
+            }
+
+            100% {
+                transform: rotate(90deg) translateX(0px);
+            }
+        }
+
+
+        /*** Portfolio Section ***/
+
+        /* Filters */
+        #portfolio>.filters {
+            text-align: right;
+            padding: 0 20px;
+        }
+
+        .filters__title {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+        }
+
+        .filters__title,
+        .filters__list {
+            display: inline-block;
+            vertical-align: baseline;
+        }
+
+        .filters__label,
+        .filters__label:not(:first-child)::before {
+            color: #dcd5b2;
+        }
+
+        .filters__label {
+            display: inline-block;
+            position: relative;
+            margin-left: .8em;
+            cursor: pointer;
+        }
+
+        .filters__label.is-active {
+            color: inherit;
+        }
+
+        .filters__label:not(:first-child)::before {
+            content: "/";
+            margin-right: .8em;
+        }
+
+        /* Projects */
+
+        .portfolio__project-wrapper {
+            padding: 0 10px;
+
+        }
+
+        .portfolio__project {
+            position: relative;
+            height: auto;
+            padding: 0;
+            background-color: #f7fbde;
+            background-clip: padding-box;
+            border: 10px solid transparent;
+            overflow: hidden;
+        }
+
+        .portfolio__project__preview {
+            position: relative;
+            top: 0;
+            height: auto;
+
+        }
+
+        .portfolio__project__preview>img {
+            width: 200px;
+            height: 250px;
+            margin-left: 25%;
+            text-align: center;
+        }
+
+        .portfolio__project__description {
+            position: absolute;
+            top: 100%;
+            width: 20%;
+            padding: 1.8em 1.3em;
+            text-align: center;
+            background: #fff;
+        }
+
+        .portfolio__project__name {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.1em;
+            margin: 0;
+            margin-bottom: .2em;
+        }
+
+        .portfolio__project__category {
+            font-size: .9em;
+            color: #dcd5b2;
+            margin-bottom: .6em;
+        }
+
+        .portfolio__project__preview,
+        .portfolio__project__description {
+            transition: all 600ms ease;
+        }
+
+        .portfolio__project:hover .portfolio__project__description {
+            transform: translateY(-100%);
+        }
+
+        .portfolio__project:hover .portfolio__project__preview {
+            transform: translateY(-2.5em);
+        }
+
+
+
+        /*** Contact Section - Footer ***/
+        footer {
+            padding-bottom: 2em;
+        }
+
+        .contact-form-wrapper {
+            padding: 0 11%;
+            z-index: 9;
+        }
+
+        .contact-form {
+            padding-bottom: 1em;
+        }
+
+        @media (max-width: 991px) {
+            footer.container {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .contact-form-wrapper {
+                padding: 0 15px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #contact {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .contact-form {
+                padding-right: 1.5em;
+            }
+
+            .contact-form-wrapper {
+                padding: 0;
+            }
+        }
+
+        .contact-form-el {
+            position: relative;
+        }
+
+        .contact-form-el>.input {
+            display: block;
+            width: 100%;
+            margin-bottom: 1.3em;
+            border-bottom: 2px solid;
+        }
+
+        .contact-form-el>textarea {
+            resize: both;
+            min-width: 100%;
+            min-height: 10em;
+            height: 10em;
+            background: #fff;
+            /* for usability on resize */
+        }
+
+        .contact-form-el>label {
+            font-size: 0.8em;
+            position: absolute;
+            top: .3em;
+            left: 0;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: #dcd5b2;
+            pointer-events: none;
+            transition: all 300ms linear;
+        }
+
+        .contact-form-el>.input:focus+label,
+        .contact-form-el>.input:valid+label {
+            transform: translateY(-1.7em);
+            transform-origin: bottom left;
+        }
+
+        .contact-form-el>.input:focus+label,
+        .contact-form-el>.input:focus:valid+label {
+            color: #51e6a6;
+        }
+
+        .contact-form-el>.input:valid+label {
+            color: #dcd5b2;
+        }
+
+        .contact-form .global-button:hover::before {
+            animation: move_arrow_h 1500ms ease-in infinite forwards;
+        }
+
+        @keyframes move_arrow_h {
+            0% {
+                transform: translateX(0px);
+            }
+
+            15% {
+                transform: translateX(-6px);
+            }
+
+            30% {
+                transform: translateX(0px);
+            }
+
+            45% {
+                transform: translateX(-6px);
+            }
+
+            60% {
+                transform: translateX(0px);
+            }
+
+            100% {
+                transform: translateX(0px);
+            }
+        }
+
+
+        #map {
+            padding: 0;
+            background-color: #f7fbde;
+            height: 20em;
+        }
+
+        @media (min-width: 768px) {
+            #map {
+                height: 25em;
+            }
+        }
+
+        footer>#credit {
+            font-size: 0.8em;
+            margin-top: 4em;
+            text-align: center;
+        }
+
+        .credit-link,
+        .credit-link:hover {
+            text-decoration: underline !important;
+        }
+
+        .credit-link:hover {
+            color: #51e6a6;
+        }
+    </style>
+    <header class="header container-fluid">
+        <div class="nav-toggle-wrapper">
+            <button class="nav-toggle-btn">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>
+        </div>
+        <nav class="header__nav">
+            <ul class="nav">
+                <li class="header__nav__item"><a href="#about" data-ref="about">about</a></li>
+                <li class="header__nav__item"><a href="#portfolio" data-ref="portfolio">work</a></li>
+                <li class="header__nav__item"><a href="#contact" data-ref="contact">contact</a></li>
+            </ul>
+            <img class="me"
+                src="https://lh3.googleusercontent.com/OUEeUU8TxEqkubnCyZq_9Q7Qh4q2L2lJlUuu0bGSjHaFLpXB8RavFPnAP8fy3GgKfz31arNPC8zeBV81Qw0FJ5bXJj7fG8R4_WXeRVJB6N5pRxg6k1yemrs3vzvTnosmyQ0d1teOzQ"
+                width="600" height="315" />
+        </nav>
+        <ul class="header__social-btns">
+            <li>
+                <a class="fa fa-facebook" href="#"></a>
+            </li>
+            <li>
+                <a class="fa fa-github" href="https://github.com/eevu" target="_blank"></a>
+            </li>
+            <li>
+                <a class="fa fa-codepen" href="https://codepen.io/eevu" target="_blank"></a>
+            </li>
+            <li>
+                <a class="fa fa-fire" href="https://www.freecodecamp.com/eevu" target="_blank"></a>
+            </li>
+        </ul>
+    </header>
+
+    <main>
+
+        <section id="about" class="main-section">
+            <div class="wrapper">
+                <p class="about__intro">
+                    <h3>Fernando Vergara</h3>
+                    <h4>The Web Developer</h4> 1year of innovation in Web Development and Programming to build my
+                    professional portfolio. Skilled
+                    problem-solver with fast learning ability for cutting edge technology.s
+                </p>
+                <a href="#portfolio" class="global-button rotated scroll"> see my work </a>
+            </div>
+        </section>
+
+        <section id="portfolio" class="container main-section">
+            <div class="filters row js-dis">
+                <h4 class="filters__title"> <i class="fa fa-tags"></i> </h4>
+                <ul class="filters__list">
+                    <li class="filters__label is-active"> all </li>
+                    <li class="filters__label" data-cat="fcc"> Portfolio</li>
+                    <li class="filters__label" data-cat="personal">My projects </li>
+                </ul>
+            </div>
+
+            <div class="portfolio__project-wrapper row">
+
+                <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4 text-center" data-cat="fcc">
+                    <a href="twonavs.html" target="_blank" title="view live">
+                        <div class="portfolio__project__preview">
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/Dbted1OcClvioe6Eq2MZiCEd9tjxj_1UhtgbvBqSgJ5UNKU1-yTwR3f17i0d280my2_ZePrer6OyVPyd4muJM1JARG0AAOA9MeWEAaQJWzlu9eNx3KA4K1TdBs9wLmNRyk18vserAQ"
+                                alt="random quotes">
+                        </div>
+                        <div class="portfolio__project__description">
+                            <div class="info-wrapper">
+                                <h3 class="portfolio__project__name">Idustrial Store</h3>
+                                <p class="portfolio__project__category">...</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="fcc">
+                    <a href="jacket.html" target="_blank" title="view live">
+                        <div class="portfolio__project__preview">
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/1_y-AKPZ4xONDcc6bkd2Hk8DyJqgrkuoz2CQKzHtpqDKiroG7z1KfBXzcwpMl61dxcxzUjcQzT2hpnMZQSDyxDUJj15kiqmBDOiEw1nFmkhn4x_Xgdjoxc5qjj79b4oVqmQt8S2r0w"
+                                alt="wikipedia viewer">
+                        </div>
+                        <div class="portfolio__project__description">
+                            <div class="info-wrapper">
+                                <h3 class="portfolio__project__name">Supreme Store</h3>
+                                <p class="portfolio__project__category">#</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="fcc">
+                    <a href="furniture.html" target="_blank" title="view live">
+                        <div class="portfolio__project__preview">
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/VX3kEuGI5TCVAf-ywSOtYdC0XEapHL6Kaby9M1CLadeWO46-2KZ2Z2vhxQMSaOUSMZ5PhlY4ibZ3dh1eQpTqNDwSYPfEDLMVJwzOcMoWT5sCpX6Gbs7NFY1MXvsscD5W7mJfh7wkyQ"
+                                alt="wikipedia viewer">
+                        </div>
+                        <div class="portfolio__project__description">
+                            <div class="info-wrapper">
+                                <h3 class="portfolio__project__name">Furniture</h3>
+                                <p class="portfolio__project__category">#</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="fcc">
+                    <a href="dyson.html" title="coming soon">
+                        <div class="portfolio__project__preview">
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/gM5LYpa4LVRjwz4F_v1w5rSyXDpVjecw4t4HANvRg9jshcNNLQ5QwbSzMxM6aeO8jNNII8nlQXDfGs-BiIk_6aAmpvc-tAG608B9oDPKFVK8kY_gFkue3qhrZ1V54Qc3hFIUrmIChg"
+                                alt="javascript calculator">
+                        </div>
+                        <div class="portfolio__project__description">
+                            <div class="info-wrapper">
+                                <h3 class="portfolio__project__name">Dyson</h3>
+                                <p class="portfolio__project__category"> #</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="personal">
+                    <a href="dating.html" title="coming soon">
+                        <div class="portfolio__project__preview">
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/AtQhFlWXvxGVlAyfF-BbJpVC6B9oXsmTjq8qqQLkBgZV-suMwtZr1eB_pWqYmRwFfdxAxzNmTyZrfw3ZiwHmVlHAPICxfiVd72nSYr8GRilmQlQYC7Lt-lpeQuXpim0BUDQ3UrxgJw"
+                                alt="text editor">
+                        </div>
+                        <div class="portfolio__project__description">
+                            <div class="info-wrapper">
+                                <h3 class="portfolio__project__name">Dating</h3>
+                                <p class="portfolio__project__category">#</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="personal">
+                    <a href="flex.html" title="coming soon">
+                        <div class="portfolio__project__preview">
+                            <img class="responsive" s
+                                src="https://lh3.googleusercontent.com/YYWDEKpsSdEeudOSsFHjt8f-_rj3IFvxkkDZMr8CnQNzQGlhlV7eEI7rkr2WYt7aBG8Kk3124cJj7dqeGK5cIkjLsSvwoauLBuzXtE-fga0yyvf4ktqHruWjBlG9ccAetV_N8-m2kw"
+                                alt="random placeholder">
+                        </div>
+                        <div class="portfolio__project__description">
+                            <div class="info-wrapper">
+                                <h3 class="portfolio__project__name"> Gallery </h3>
+                                <p class="portfolio__project__category">#r</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="portfolio__project col-xs-12 col-sm-6 col-lg-4" data-cat="personal">
+                    <a href="responsive.html.html" title="coming soon">
+                        <div class="portfolio__project__preview">
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/AtQhFlWXvxGVlAyfF-BbJpVC6B9oXsmTjq8qqQLkBgZV-suMwtZr1eB_pWqYmRwFfdxAxzNmTyZrfw3ZiwHmVlHAPICxfiVd72nSYr8GRilmQlQYC7Lt-lpeQuXpim0BUDQ3UrxgJw"
+                                alt="text editor">
+                        </div>
+                        <div class="portfolio__project__description">
+                            <div class="info-wrapper">
+                                <h3 class="portfolio__project__name">responsive page</h3>
+                                <p class="portfolio__project__category">#</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            </a>
+            </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="container">
+        <section id="contact" class="row main-section ">
+            <div class="col-xs-12 col-md-5 contact-form-wrapper">
+                <h2 class="heading"> drop me a line </h2>
+                <form class="contact-form">
+                    <div class="contact-form-el">
+                        <input type="text" id="name" class="input" required></input>
+                        <label for="name"> your name </label>
+                    </div>
+                    <div class="contact-form-el">
+                        <input type="email" id="email" class="input" required></input>
+                        <label for="email"> your e-mail </label>
+                    </div>
+                    <div class="contact-form-el">
+                        <textarea rows="7 " id="message" class="input" required></textarea>
+                        <label for="message"> your message </label>
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="global-button"> send </button>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+
+        <script>
+            // initialize page
+            function jsInit() {
+                // collect DOM elements
+                var navLabels = document.getElementsByClassName("header__nav__item"),
+                    navToggleBtn = document.getElementsByClassName("nav-toggle-btn")[0],
+                    sections = document.getElementsByClassName("main-section"),
+                    prevSectionIndex,
+                    filters = document.getElementsByClassName("filters__label"),
+                    projects = document.getElementsByClassName("portfolio__project");
+
+                // helper callback
+                function removeClass(classString) {
+                    return function (el) {
+                        el.classList.remove(classString);
+                    };
+                }
+
+                function updateNavLabels() {
+                    for (var i = 0; i < sections.length; i++) {
+                        // check which section is in viewport
+                        if ((prevSectionIndex != i) && ((sections[i].getBoundingClientRect().top < window.innerHeight /
+                                3 && sections[i].getBoundingClientRect().top >= 0) || (sections[i]
+                                .getBoundingClientRect().bottom > 3 * window.innerHeight / 4 && sections[i]
+                                .getBoundingClientRect().bottom < sections[i].getBoundingClientRect().height))) {
+                            // update labels consequently
+                            [].forEach.call(navLabels, removeClass("is-active"));
+                            navLabels[i].classList.add("is-active");
+
+                            prevSectionIndex = i;
+                        }
+                    }
+
+                }
+
+                function navToggle() {
+                    var navToggleWrap = this.parentNode;
+                    //expand nav
+                    navToggleWrap.classList.toggle("expand");
+                    // close nav when clicking on a link
+                    [].forEach.call(navLabels, function (el) {
+                        el.addEventListener("click", collapseNav);
+                    });
+
+                    function collapseNav() {
+                        navToggleWrap.classList.remove("expand");
+                        [].forEach.call(navLabels, function (el) {
+                            el.removeEventListener("click", collapseNav);
+                        });
+                    }
+                }
+
+                function filterProjects() {
+
+                    var category = this.getAttribute("data-cat");
+
+                    // update active state for category labels
+                    updateFilterLabel(this);
+
+                    // display or hide elements depending on selected category
+                    if (!category) {
+                        // display all projects if "all" is selected
+                        [].forEach.call(projects, displayEl);
+                    } else {
+                        [].forEach.call(projects, function (el) {
+                            if (el.getAttribute("data-cat") !== category) {
+                                hideEl(el);
+                            } else {
+                                displayEl(el);
+                            }
+                        });
+                    }
+
+                    // utility
+                    function updateFilterLabel(activeEl) {
+                        [].forEach.call(filters, removeClass("is-active"));
+                        activeEl.classList.add("is-active");
+                    }
+
+                    function displayEl(el) {
+                        el.style.display = "block";
+                    }
+
+                    function hideEl(el) {
+                        el.style.display = "none";
+                    }
+
+                }
+
+                // display all js-dependent elements
+                var jsEl = document.getElementsByClassName("js-dis");
+                [].forEach.call(jsEl, removeClass("js-dis"));
+
+                // display current section state in nav
+                updateNavLabels();
+
+                /** event listeners: **/
+                // change current section label in nav when scrolling
+                window.addEventListener("scroll", updateNavLabels);
+                // toggle navigation when collapsed on smaller screens
+                navToggleBtn.addEventListener("click", navToggle);
+                // filtering function
+                [].forEach.call(filters, function (el) {
+                    el.addEventListener("click", filterProjects)
+                });
+
+            }
+
+            jsInit();
+
+
+            // Add Google Maps
+            function initMap() {
+                var customMapType = new google.maps.StyledMapType([{
+                    "featureType": "all",
+                    "elementType": "labels.text",
+                    "stylers": [{
+                        "color": "#6c6753"
+                    }]
+                }, {
+                    "featureType": "all",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [{
+                        "color": "#ffffff"
+                    }]
+                }, {
+                    "featureType": "administrative",
+                    "elementType": "labels.text.fill",
+                    "stylers": [{
+                        "color": "#444444"
+                    }]
+                }, {
+                    "featureType": "landscape",
+                    "elementType": "geometry.fill",
+                    "stylers": [{
+                        "color": "#ffffff"
+                    }, {
+                        "lightness": "0"
+                    }, {
+                        "gamma": "1.00"
+                    }]
+                }, {
+                    "featureType": "poi",
+                    "elementType": "all",
+                    "stylers": [{
+                        "visibility": "off"
+                    }]
+                }, {
+                    "featureType": "road",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#51e6a6"
+                    }]
+                }, {
+                    "featureType": "road",
+                    "elementType": "labels.text",
+                    "stylers": [{
+                        "color": "#6c6753"
+                    }, {
+                        "visibility": "simplified"
+                    }]
+                }, {
+                    "featureType": "road",
+                    "elementType": "labels.icon",
+                    "stylers": [{
+                        "saturation": "-100"
+                    }, {
+                        "lightness": "11"
+                    }]
+                }, {
+                    "featureType": "transit",
+                    "elementType": "all",
+                    "stylers": [{
+                        "visibility": "off"
+                    }]
+                }, {
+                    "featureType": "water",
+                    "elementType": "all",
+                    "stylers": [{
+                        "visibility": "on"
+                    }]
+                }, {
+                    "featureType": "water",
+                    "elementType": "geometry",
+                    "stylers": [{
+                        "color": "#51ffa6"
+                    }, {
+                        "lightness": "27"
+                    }, {
+                        "saturation": "-14"
+                    }]
+                }], {
+                    name: 'Styled'
+                });
+                var customMapTypeId = 'custom_style';
+
+                var latLng = {
+                    lat: 39.2257618,
+                    lng: 9.122245
+                };
+
+                var map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 13,
+                    center: latLng,
+                    mapTypeControlOptions: {
+                        mapTypeIds: [google.maps.MapTypeId.ROADMAP, customMapTypeId]
+                    }
+                });
+
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                    title: "I'm here!"
+                });
+
+                map.mapTypes.set(customMapTypeId, customMapType);
+                map.setMapTypeId(customMapTypeId);
+
+            }
+        </script>
+    </footer>
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Emblema+One&family=Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Lobster+Two&family=Londrina+Outline&family=Londrina+Shadow&family=Pacifico&family=Raleway&family=Sonsie+One&display=swap');
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+        /* Body styling */
+
+        body {
+            max-height: 50%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: #2D2D2D;
+        }
+
+
+        /* Main Typography */
+
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: -0.125em;
+            font-family: 'Vibes', cursive
+        }
+
+        h2 {
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        h3 {
+            letter-spacing: -0.03125em;
+        }
+
+        p {
+            letter-spacing: -0.0125em;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+
+        /* Front Page Image Layout  */
+
+
+        /* Image stretches to vh */
+
+        header#front {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            background: #2D2D2D;
+        }
+
+        header #bg-photo {
+            margin-top: 10%;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: block;
+            width: 100%;
+            min-height: 100%;
+            height: 100vh;
+            object-fit: cover;
+            opacity: .6;
+
+
+
+        }
+
+
+        @keyframes onLoad {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        /* Navigation */
+
+        #navBar {
+            position: fixed;
+            bottom: 50px;
+            margin: 0;
+            width: 100%;
+            height: 80px;
+            background: #2D2D2D;
+            box-shadow: 0px 0px 10px #2d2d2d;
+            z-index: 9999;
+        }
+
+
+        /* Name on Nav Bar */
+
+        h1 {
+            display: inline-block;
+            color: whitesmoke;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            font-size: 1.5em;
+            margin: 0;
+            font-weight: lighter;
+            padding: 1em 0 0 1em;
+        }
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 7em;
+            font-family: arial;
+            letter-spacing: .3em;
+        }
+
+        .social-icons {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            margin-top: 10px;
+            opacity: .4;
+
+        }
+
+        .social-icons ul {
+            list-style: none;
+        }
+
+        .social-icons ul li {
+            display: inline-block;
+            margin: 0 10px;
+            transition: .25s
+        }
+
+        .social-icons ul li a {
+            color: #000000;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            padding: 13px;
+            line-height: 4.8;
+            display: block;
+            text-align: center;
+            transform: rotate(-30deg) skew(25deg) perspective(20px) translate(0, 0);
+            box-shadow: -20px 20px 15px rgba(0, 0, 0, 0.8);
+            transition: .25s
+        }
+
+        .social-icons ul li a i {
+            color: #000000;
+            font-size: 40px;
+            position: absolute;
+            top: 0;
+            left: 25%;
+            line-height: 2;
+            transition: .25s
+        }
+
+        .social-icons ul li a:before {
+            content: "";
+            position: absolute;
+            top: 80px;
+            left: -9px;
+            height: 20px;
+            width: 100%;
+            background-color: #0f0f;
+            transform: skew(-45deg)
+        }
+
+        .social-icons ul li a:after {
+            content: "";
+            position: absolute;
+            top: 40px;
+            left: -50px;
+            height: 20px;
+            width: 101%;
+            background-color: #0f0f;
+            transform: rotate(90deg) skew(45deg);
+        }
+
+        .social-icons ul li:hover i {
+            color: #FFF
+        }
+
+        .social-icons ul li a:hover {
+            transform: translate(20px, -20px) rotate(-30deg) skew(25deg) perspective(20px);
+            color: #fff
+        }
+
+        .social-icons ul li:nth-child(1) a {
+            background-i: #3b5999;
+        }
+
+        .social-icons ul li:nth-child(1) a:before,
+        .social-icons ul li:nth-child(1) a:after {
+            background-color: #304c8a;
+        }
+
+        .social-icons ul li:nth-child(2) a {
+            background-color: #5accee
+        }
+
+        .social-icons ul li:nth-child(2) a:before,
+        .social-icons ul li:nth-child(2) a:after {
+            background-color: #55b0cc;
+        }
+
+        .social-icons ul li:nth-child(3) a {
+            background-color: #0077b5
+        }
+
+        .social-icons ul li:nth-child(3) a:before,
+        .social-icons ul li:nth-child(3) a:after {
+            background-color: #0369a0;
+        }
+
+        .social-icons ul li:nth-child(4) a {
+            background-color: #e20d06
+        }
+
+        .social-icons ul li:nth-child(4) a:before,
+        .social-icons ul li:nth-child(4) a:after {
+            background-color: #c7110b;
+        }
+
+        @media (max-width: 600px) {
+            ul {
+                transform: scale(0.6);
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 700px) {
+            ul {
+                transform: scale(0.7);
+            }
+        }
+
+        @media (min-width: 701px) and (max-width: 800px) {
+            ul {
+                transform: scale(0.8);
+            }
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: inline;
+            z-index: 1;
+        }
+
+        ul li {
+            margin: 0 40px;
+        }
+
+        ul li a .fa {
+            font-size: 40px;
+            color: #555;
+            line-height: 80px;
+            transition: 0.5s;
+        }
+
+        ul li a {
+            position: relative;
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            text-align: center;
+            transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(0, 0);
+            transition: 0.5s;
+            box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        ul li a::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: -20px;
+            height: 100%;
+            width: 20px;
+            background: #b2b2b2;
+            transition: 0.5s;
+            transform: rotate(0deg) skewY(-45deg);
+        }
+
+        ul li a::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: -10px;
+            height: 20px;
+            width: 100%;
+            background: #e5e5e5;
+            transition: 0.5s;
+            transform: rotate(0deg) skewX(-45deg);
+        }
+
+        ul li a:hover {
+            transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px, -20px);
+            box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        ul li:hover .fa {
+            color: #fff;
+        }
+
+        ul li:hover:nth-child(1) a {
+            background-color: #3b5999;
+        }
+
+        ul li:hover:nth-child(1) a::before {
+            background-color: #2f477a;
+        }
+
+        ul li:hover:nth-child(1) a::after {
+            background-color: #4e69a3;
+        }
+
+        ul li:hover:nth-child(2) a {
+            background-color: #55acee;
+        }
+
+        ul li:hover:nth-child(2) a::before {
+            background-color: #4489be;
+        }
+
+        ul li:hover:nth-child(2) a::after {
+            background-color: #66b4ef;
+        }
+
+        ul li:hover:nth-child(3) a {
+            background-color: #dd4b39;
+        }
+
+        ul li:hover:nth-child(3) a::before {
+            background-color: #b03c2d;
+        }
+
+        ul li:hover:nth-child(3) a::after {
+            background-color: #e05d4c;
+        }
+
+        ul li:hover:nth-child(4) a {
+            background-color: #0077b5;
+        }
+
+        ul li:hover:nth-child(4) a::before {
+            background-color: #005f90;
+        }
+
+        ul li:hover:nth-child(4) a::after {
+            background-color: #1984bc;
+        }
+
+        ul li:hover:nth-child(5) a {
+            background-color: #e4405f;
+        }
+
+        ul li:hover:nth-child(5) a::before {
+            background-color: #b6334c;
+        }
+
+        ul li:hover:nth-child(5) a::after {
+            background-color: #e6536f;
+        }
+
+
+        /* drawer menu */
+
+        .drawer-menu {
+            box-sizing: border-box;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 70%;
+            height: 100%;
+            padding: 120px 0;
+            background: #222;
+            -webkit-transition-property: all;
+            transition-property: all;
+            -webkit-transition-duration: .5s;
+            transition-duration: .5s;
+            -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+            -webkit-transform-origin: right center;
+            -ms-transform-origin: right center;
+            transform-origin: right center;
+            -webkit-transform: perspective(500px) rotateY(-90deg);
+            transform: perspective(500px) rotateY(-90deg);
+            opacity: 0;
+            box-shadow: 0px 0px 5px #1E1E1E;
+        }
+
+        .drawer-menu li {
+            text-align: center;
+        }
+
+        .drawer-menu li a {
+            display: block;
+            height: 100px;
+            width: 120px;
+            line-height: 40px;
+            padding 10px;
+            line-height: 50px;
+            font-size: 14px;
+            color: #fff;
+            -webkit-transition: all .8s;
+            transition: all .8s;
+        }
+
+        .drawer-menu li a:hover {
+            color: rgb(3, 46, 111);
+            background: rgb(142, 47, 0);
+        }
+
+
+        /* checkbox */
+
+        .check {
+            display: none;
+        }
+
+
+        /* menu button - label tag */
+
+        .menu-btn {
+            position: fixed;
+            display: block;
+            bottom: 28px;
+            right: 40px;
+            display: block;
+            width: 20px;
+            height: 40px;
+            font-size: 10px;
+            text-align: center;
+            cursor: pointer;
+            z-index: 3;
+        }
+
+        .bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: white;
+            -webkit-transition: all .5s;
+            transition: all .5s;
+            -webkit-transform-origin: left top;
+            -ms-transform-origin: left top;
+            transform-origin: left top;
+        }
+
+        .bar.middle {
+            top: 12px;
+            opacity: 1;
+        }
+
+        .bar.bottom {
+            top: 24px;
+            -webkit-transform-origin: left bottom;
+            -ms-transform-origin: left bottom;
+            transform-origin: left bottom;
+        }
+
+        .menu-btn__text {
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            color: rgb(0, 0, 0);
+            -webkit-transition: all .5s;
+            transition: all .5s;
+            display: block;
+            visibility: visible;
+            opacity: 1;
+        }
+
+
+        /* Hover Effects */
+
+        .menu-btn:hover .bar {
+            background: white;
+        }
+
+        .menu-btn:hover .menu-btn__text {
+            color: #999;
+        }
+
+        .close-menu {
+            position: fixed;
+            top: 0;
+            right: 300px;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0);
+            -webkit-transition-property: all;
+            transition-property: all;
+            -webkit-transition-duration: .3s;
+            transition-duration: .3s;
+            -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+
+        /* checked */
+
+        .check:checked~.drawer-menu {
+            -webkit-transition-delay: .3s;
+            transition-delay: .3s;
+            -webkit-transform: none;
+            -ms-transform: none;
+            transform: none;
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .check:checked~.contents {
+            -webkit-transition-delay: 0s;
+            transition-delay: 0s;
+            -webkit-transform: translateX(-300px);
+            -ms-transform: translateX(-300px);
+            transform: translateX(-300px);
+        }
+
+        .check:checked~.menu-btn .menu-btn__text {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .check:checked~.menu-btn .bar.top {
+            width: 56px;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .check:checked~.menu-btn .bar.middle {
+            opacity: 0;
+        }
+
+        .check:checked~.menu-btn .bar.bottom {
+            width: 56px;
+            top: 40px;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+
+        .check:checked~.close-menu {
+            -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+            -webkit-transition-delay: .3s;
+            transition-delay: .3s;
+            background: rgba(0, 0, 0, .5);
+            visibility: visible;
+            opacity: 1;
+            z-index: 3;
+        }
+
+
+        /* End Navigation */
+
+
+        /* Main Content */
+
+
+        /* About Me Section */
+
+        #about {
+            max-width: 100%;
+            background: #EDEEEF;
+            color: #5B5A60;
+        }
+
+        #about h1 {
+            padding: 20% 0 2% 0;
+            display: block;
+            color: #5B5A60;
+            text-align: center;
+            font-size: 1.8em;
+        }
+
+        #line {
+            padding: 0;
+            margin: 0;
+            display: block;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            line-height: 150%;
+            color: rgba(26, 26, 26, .6);
+            padding: 0 10% 8% 10%;
+        }
+
+
+        /* Skill section */
+
+        #skill-info {
+            text-transform: none;
+            text-align: center;
+            padding: 0 2px 7% 2px;
+            color: #2d2d2d;
+        }
+
+        div img {
+            display: block;
+            margin: 0 25%;
+            width: 50%;
+            padding-bottom: 20%;
+        }
+
+
+        /* sections before skills */
+
+        #gear p {
+            font-size: 1em;
+            text-transform: none;
+            padding: 0 0 7% 0;
+            margin: 0;
+            text-align: center;
+        }
+
+
+
+        #gear img {
+            width: 17%;
+            margin: 0 41.5%;
+            padding: 5% 0 7% 0;
+        }
+
+        /* Skill bars */
+
+        #skills {
+            max-width: 100%;
+            background: #fff;
+            text-align: left;
+            padding: 0 8%;
+            text-align: left;
+            text-transform: uppercase;
+            padding-bottom: 20%;
+        }
+
+        #skills p {
+            padding: 0 10% 8% 10%;
+            color: rgba(26, 26, 26, .6);
+        }
+
+        #skills #line {
+            padding: 0;
+            margin: 0;
+            display: block;
+            text-align: center;
+        }
+
+        #skills h1 {
+            padding: 20% 0 2% 0;
+            text-align: center;
+            display: block;
+            color: #5B5A60;
+            text-align: center;
+            font-size: 1.8em;
+        }
+
+        #skills ul {
+            padding-top: 10%;
+        }
+
+
+
+
+        .box {
+            height: .7em;
+            margin: 2% 0;
+            width: 100%;
+            border: .05em solid #2D2D2D;
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+        #one {
+            height: .7em;
+            width: 100%;
+            background: #2D2D2D;
+            display: block;
+        }
+
+        #two {
+            height: .7em;
+            width: 90%;
+            background: #2D2D2D;
+            display: block;
+        }
+
+        #three {
+            height: .7em;
+            width: 30%;
+            background: #2D2D2D;
+            display: block;
+        }
+
+        #four {
+            height: .7em;
+            width: 13%;
+            background: #2D2D2D;
+            display: block;
+        }
+
+
+        /* End Skills */
+
+
+        /* Portfolio Section */
+
+        #portfolio {
+            width: 100%;
+            background: #EDEEEF;
+        }
+
+        #portfolio h1 {
+            padding: 25% 0 2% 0;
+            text-align: center;
+            display: block;
+            color: #5B5A60;
+            text-align: center;
+            font-size: 1.8em;
+        }
+
+        #portfolio p {
+            text-align: center;
+            margin: 0;
+            padding-bottom: 25%;
+        }
+
+        #port-link {
+            text-decoration: none;
+            color: rgba(26, 26, 26, .6);
+            font-size: 1em;
+            letter-spacing: 0;
+            text-transform: none;
+        }
+
+
+        /* End Portfolio */
+
+
+        /* Contact form with Formspree */
+
+        #contact {
+            width: 100%;
+            background: #fff;
+            margin: 0;
+            padding-bottom: 0;
+        }
+
+        #contact h3 {
+            text-transform: uppercase;
+            text-align: left;
+            padding-left: 7%;
+            color: #2d2d2d;
+        }
+
+        p.contactIn {
+            padding-top: 0;
+            padding-bottom: 0;
+            padding-left: 12%;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        #contact p {
+            text-align: left;
+            padding-left: 12%;
+        }
+
+        #contact h1 {
+            padding: 15% 0 2% 6%;
+            text-align: left;
+            display: block;
+            color: #2d2d2d;
+            font-size: 1.8em;
+        }
+
+        #contact input {
+            border-radius: 0px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            background: #fafafa;
+        }
+
+        #contact label {
+            padding-left: 0%;
+            padding-bottom: 2%;
+            display: block;
+            text-align: left;
+            color: rgba(5, 5, 5, 0.6);
+        }
+
+        #name {
+            padding-top: 10%;
+            padding-left: 8%;
+            width: 90%;
+            display: block;
+            padding-bottom: 5%;
+        }
+
+        #email {
+            padding-bottom: 5%;
+            padding-left: 8%;
+            display: block;
+        }
+
+        #message label {
+            padding-left: 8%;
+            display: block;
+        }
+
+        textarea {
+            box-shadow: 0 0 0 0;
+            border-radius: 0px;
+            margin-left: 8%;
+            width: 82%;
+            display: inline-block;
+            border: 1px solid #ccc;
+            background: #fafafa;
+            height: 100px;
+        }
+
+        #submit input[type=submit] {
+            display: block;
+            margin: auto;
+            color: #fff;
+            background: #2d2d2d;
+            border: 0px;
+            padding: 1% 3%;
+            letter-spacing: 0.1em;
+            transition: all .5s;
+            border: .5px solid #2d2d2d;
+        }
+
+        #submit input[type=submit]:hover {
+            background: #fff;
+            color: #2d2d2d;
+            border: .5px solid #2d2d2d;
+        }
+
+        #submit input[type=reset] {
+            display: inline-block;
+            margin: auto;
+            color: #fff;
+            background: #2d2d2d;
+            border: 0px;
+            padding: 1% 3%;
+            letter-spacing: 0.1em;
+            transition: all .5s;
+            border: .5px solid #2d2d2d;
+        }
+
+        #submit input[type=reset]:hover {
+            background: #fff;
+            color: #2d2d2d;
+            border: .5px solid #2d2d2d;
+        }
+
+        #submit {
+            padding-bottom: 10%;
+            margin-top: 10%;
+        }
+
+
+        /* End Contact Form */
+
+
+        /* Footer Content */
+
+
+        /* Scroll up indicator */
+
+        #footer-above {
+            width: 100%;
+            height: 30px;
+        }
+
+        #to-top {
+            display: block;
+            padding-bottom: 4%;
+        }
+
+        #scroll-up {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: auto;
+            transform: rotate(45deg);
+            display: block;
+            border-top: 2px solid whitesmoke;
+            border-left: 2px solid whitesmoke;
+            cursor: pointer;
+            transition: all .5s;
+        }
+
+        footer {
+            display: inline-block;
+            width: 90%;
+            padding-bottom: 3%;
+            color: #999;
+            text-align: center;
+            background: #2d2d2d;
+            margin: 0 5%;
+        }
+
+
+        /* End Footer */
+
+
+        /* Resume */
+
+        header#resume img {
+            width: 100%;
+        }
+
+
+        /* Media Query for Tablet */
+
+        @media screen and (min-width: 768px) {
+            div#about {
+                width: 100%;
+            }
+
+            #about h1 {
+                padding-top: 15%;
+                padding-bottom: 2%;
+                font-size: 2.2em;
+            }
+
+            #about p {
+                font-size: 1.3em;
+            }
+
+            #skills h1 {
+                font-size: 2.2em;
+            }
+
+            div#skills {
+                max-width: 100%;
+            }
+
+            div#skills p {
+                font-size: 1.3em;
+                margin-left: 10%;
+                margin-right: 10%;
+            }
+
+            /*  Skill bars for larger viewports  */
+            #skills ul {
+                font-size: 1.2em;
+                margin: 0 auto;
+                padding: 0 0 0 0;
+                text-align: center;
+                width: 100%;
+                display: block;
+                clear: both;
+            }
+
+            div#skill-left {
+                display: inline-block;
+                width: 42%;
+                padding-right: 5%;
+                text-align: left;
+                font-size: 1em;
+            }
+
+            div#skill-right {
+                display: inline-block;
+                width: 42%;
+                padding-left: 5%;
+                text-align: left;
+                font-size: 1em;
+            }
+
+            /*  end skill divs for left and right   */
+            #port-link {
+                font-size: 1.3em;
+            }
+
+            div#portfolio h1 {
+                font-size: 2.2em;
+            }
+
+            div#portfolio p {
+                font-size: 1.3;
+            }
+
+            /*  Contact Form  */
+            div#contact {
+                clear: both;
+            }
+
+            #contact h1 {
+                padding-left: 10%;
+                font-size: 1.8em;
+            }
+
+            #contact h3 {
+                font-size: 1em;
+                padding-left: 10%;
+                letter-spacing: 2px;
+            }
+
+            #contact p {
+                margin-right: 10%;
+                font-size: 1em;
+                padding-left: 10%;
+            }
+
+            #contact label {
+                font-size: 1.2em;
+            }
+
+            #submit {
+                font-size: 1.2em;
+            }
+
+            div#contact {
+                display: inline-block;
+                background: #fff;
+            }
+
+            form {
+                padding-top: 2.5%;
+                float: right;
+                width: 55%;
+                background: #fff;
+                display: inline-block;
+            }
+
+            #contact label {
+                font-size: .9em;
+            }
+
+            #con-left {
+                display: inline-block;
+                float: left;
+                width: 45%;
+                background: #fff;
+            }
+
+            #submit {
+                float: left;
+                margin: 4% 8%;
+                font-size: 1em;
+            }
+
+            #name input {
+                width: 60%;
+                height: 26px;
+            }
+
+            #email input {
+                width: 60%;
+                height: 26px;
+            }
+
+            #submit input[type=submit] {
+                padding: 5% 25%;
+                margin: auto;
+                text-align: center;
+            }
+
+            #submit input[type=reset] {
+                padding: 5% 25%;
+                margin: auto;
+                text-align: center;
+            }
+
+            div#footer-above {
+                clear: both;
+            }
+
+            .social {
+                padding: 10px 10px 10px 40px;
+                font-size: 10px;
+            }
+
+            .social a i {
+                color: black;
+            }
+        }
+
+
+        /* Media Query only for logo */
+
+        @media screen and (min-width: 480px) {
+            #logo {
+                top: 37%;
+                width: 33%;
+                margin: 0 33.5%;
+            }
+
+        }
+
+
+
+
+        .social {
+            padding: 10px 10px 10px 40px;
+            font-size: 10px;
+        }
+
+        .social a i {
+            color: black;
+        }
+        }
+
+        /* End Media Query for Desktop */
+
+
+        /* Media Query for large desktop computers */
+
+        @media screen and (min-width: 1500px) {
+            #logo {
+                top: 35;
+                width: 20%;
+                margin: 0 40%;
+            }
+
+            #footer {
+                padding-bottom: 1%;
+            }
+
+
+
+            /* RESUME SECTION */
+
+
+            /* Header */
+
+            header#resume {
+                height: 75vh;
+                width: 100%;
+                position: relative;
+                display: flex;
+                overflow: hidden;
+            }
+
+            #bg-resume {
+                max-width: 100%;
+                object-fit: cover;
+                position: absolute;
+                display: block;
+                height: 75vh;
+                margin-top: 78px;
+                opacity: .9;
+                animation: onLoad 2s ease-in-out;
+            }
+
+            #res-head {
+                top: 50%;
+                max-width: 33.333%;
+                margin: 0 33.5%;
+                position: absolute;
+                z-index: 9;
+                display: block;
+            }
+
+            #port-head {
+                top: 50%;
+                max-width: 50%;
+                margin: 0 25%;
+                position: absolute;
+                z-index: 9;
+                display: block;
+            }
+
+
+            /* header text */
+
+
+            /* skills */
+
+            #tech-and-skills {
+                background: #EDEEEF;
+                display: block;
+            }
+
+            #tech-and-skills h1 {
+                color: #2d2d2d;
+                text-align: left;
+                padding-bottom: 8%;
+                padding-top: 15%;
+            }
+
+            #tech-and-skills h3 {
+                padding-left: 5%;
+                color: #2d2d2d;
+                letter-spacing: .4px;
+                text-transform: uppercase;
+            }
+
+            div#tech-and-skills ul {
+                list-style-type: disc;
+                margin: 0;
+                padding: 0 0 8% 0;
+                padding-left: 15%;
+                color: rgba(26, 26, 26, .6);
+                line-height: 2em;
+            }
+
+
+
+            .social {
+                padding: 10px 10px 10px 40px;
+                font-size: 10px;
+            }
+
+            .social a i {
+                color: black;
+            }
+        }
+
+        /* Media queries for resume */
+
+        @media screen and (min-width: 768px) {
+
+            #res-head {
+                max-width: 20%;
+                margin: 0 40%;
+            }
+
+            #port-head {
+                max-width: 25%;
+                margin: 0 37.5%;
+            }
+
+
+            #tech-header {
+                padding-top: 1.5%;
+                margin-left: 5%;
+                float: left;
+                width: 30%;
+                display: inline-block;
+            }
+
+
+
+
+
+            p#mcglinns {
+                padding-bottom: 0;
+                padding-right: 15%;
+            }
+
+
+
+
+
+
+
+            .container {
+                padding: 2em 0;
+                margin: 0 10%;
+            }
+
+
+            @media screen and (min-width: 800px) {
+
+                .container {
+                    display: inline-block;
+                    width: 26%;
+                    padding: 10% 0;
+                    margin: 0 11%;
+                }
+
+                #photo-left {
+                    margin-left: 13%;
+                }
+
+
+                img.content-image {
+                    padding: 0;
+                    margin: 0;
+                    width: 100%;
+                }
+
+
+
+                /* Fixes for portrait scale lightbox images */
+
+
+                .social {
+                    padding: 10px 10px 10px 40px;
+                    font-size: 10px;
+                }
+
+                .social a i {
+                    color: black;
+                }
+            }
+
+
+            @media screen and (orientation: landscape) {
+                .lightbox img {
+                    max-width: 50%;
+                    margin-top: 10%;
+                }
+
+                .lightbox p {
+                    display: none;
+                }
+
+
+
+
+            }
+
+            /* Tablet and up */
+            @media screen and (min-width: 768px) {
+
+                /*  Lightbox  */
+                .lightbox {
+                    display: none;
+                    position: fixed;
+                    z-index: 999;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    top: 0;
+                    left: 0;
+                    background: rgba(0, 0, 0, .7);
+                }
+
+            }
+
+            .social {
+                padding: 10px 10px 10px 40px;
+                font-size: 10px;
+            }
+
+            .social a i {
+                color: black;
+            }
+        }
+
+        @media screen and (max-device-width: 667px) {
+            .social {
+                padding: 10px 10px 10px 40px;
+                font-size: 10px;
+            }
+
+            .social a i {
+                color: black;
+            }
+
+            #submit input[type=reset] {
+                display: block;
+                margin: auto;
+                color: #fff;
+                background: #2d2d2d;
+                border: 0px;
+                padding: 1% 3%;
+                letter-spacing: 0.1em;
+                transition: all .5s;
+                border: .5px solid #2d2d2d;
+                margin-top: 10px;
+            }
+        }
+
+
+        .parent {
+            margin-bottom: 20%;
+            height: 80vh;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 5px;
+            grid-row-gap: 100px;
+        }
+
+        .div1 {
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #f1f1f1;
+            perspective: 100%;
+            /* Remove this if you don't want the 3D effect */
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .div2 {
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #f1f1f1;
+            perspective: 100%;
+            /* Remove this if you don't want the 3D effect */
+            grid-area: 1 / 2 / 2 / 3;
+        }
+
+        .div3 {
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #f1f1f1;
+            perspective: 100%;
+            /* Remove this if you don't want the 3D effect */
+            grid-area: 2 / 1 / 3 / 2;
+        }
+
+        .div4 {
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            border: 1px solid #f1f1f1;
+            perspective: 100%;
+            /* Remove this if you don't want the 3D effect */
+            grid-area: 2 / 2 / 3 / 3;
+        }
+
+        .responsive {
+
+            width: 50%;
+            height: 100%;
+        }
+
+
+        /* This container is needed to position the front and back side */
+        .flip-box-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        /* Do an horizontal flip when you move the mouse over the flip box container */
+        .div1:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+
+        .div2:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+
+        .div3:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+
+        .div4:hover .flip-box-inner {
+            transform: rotateY(180deg);
+        }
+
+
+        /* Position the front and back side */
+        .flip-box-front,
+        .flip-box-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            /* Safari */
+            backface-visibility: hidden;
+        }
+
+        /* Style the front side */
+        .flip-box-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        /* Style the back side */
+        .flip-box-back {
+            background-color: dodgerblue;
+            color: white;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+
+        <a name="home-page"></a>
+
+        <!--  Navigation  -->
+        <div id="navBar">
+            <h1>Fernando Vergara</h1>
+            <div class="social-icons">
+                <ul>
+                    <li>
+                        <a href="https://github.com/vergarafernando"><img
+                                src="http://icons.iconarchive.com/icons/social-media-icons/glossy-social/96/Github-icon.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://mobile.twitter.com/fernand96537569"><img
+                                src="http://icons.iconarchive.com/icons/graphics-vibe/simple-rounded-social/96/twitter-icon.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://m.facebook.com/fdoe88?ref=bookmarks"><img
+                                src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/128/Facebook-icon.png"></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/fernando-vergara-7262551a4"><img
+                                src="http://icons.iconarchive.com/icons/graphics-vibe/purple-glossy-social/128/linkedin-icon.png"></a>
+                    </li>
+
+                </ul>
+            </div>
+            <input type="checkbox" class="check" id="checked">
+            <label class="menu-btn" for="checked">
+                <span class="bar top"></span>
+                <span class="bar middle"></span>
+                <span class="bar bottom"></span>
+                <span class="menu-btn__text"></span>
+            </label>
+            <label class="close-menu" for="checked"></label>
+            <nav class="drawer-menu">
+                <ul>
+                    <li><a href="#home-page">Home</a></li>
+                    <li><a href="#about-me">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact-me">Contact</a></li>
+
+                </ul>
+            </nav>
+        </div>
+
+
+        <!--  Header  -->
+        <header id="front">
+
+
+            <img id="bg-photo"
+                src="https://lh3.googleusercontent.com/u9CnlY8rz6BT289zITHnHVzHApi0QkOllMmWbQMGCkg9pzldoYEcwdrL9X31GdMBdOWVgw3_HvTzt1uvmGbEPiZsNummRMLDCAMmTyNJP2YEg1hDXWyYjWOSXFSKDCpteK082WaDoQ"
+                alt="Fernando Vergara photo" />
+
+
+        </header>
+
+        <!--  About Section   -->
+
+        <div id="about">
+
+            <a name="about-me"></a>
+            <h1 class="hideme">About</h1>
+            <p class="hideme" id="line">_____</p>
+            <p class="hideme">2 years of innovation in Web Development and Programming to build up my portfolio. Skilled
+                problem-solver with fast a learning curve for cutting edge technology. I'm currently in the Google IT
+                support program. I'm looking for a company where i can enhance my professional skills, be creative and
+                help others. <p>
+
+
+
+                    <p>Im Able to relate effectively to people at all levels and carry in an understandable manner. </p>
+
+
+
+        </div>
+
+        <div id="skills">
+
+            <h1 class="hideme">SKILLS</h1>
+
+            <!--  Gear    -->
+
+            <div id="gear">
+
+                <img class="hideme"
+                    src="https://raw.githubusercontent.com/atloomer/atloomer.github.io/master/img/gearIcon.png"
+                    alt="gear icon" />
+
+
+
+            </div>
+
+
+
+
+
+
+            <ul class="hideme">
+
+                <div id="skill-left">
+
+                    <li>Html 5</li>
+                    <div class="box">
+                        <div id="one"></div>
+                    </div>
+                    <li>Css 3</li>
+                    <div class="box">
+                        <div id="two"></div>
+                    </div>
+                    <li>JavaScript</li>
+                    <div class="box">
+                        <div id="three"></div>
+                    </div>
+
+                </div>
+
+                <div id="skill-right">
+
+                    <li>Python</li>
+                    <div class="box">
+                        <div id="four"></div>
+                    </div>
+                    <li></li>
+
+            </ul>
+        </div>
+
+        </div>
+
+        <div id="portfolio">
+
+            <h1 class="hideme">Portfolio</h1>
+
+
+            <div class="parent">
+
+                <div class="div1">
+                    <a href="ferniture.html">
+                        <p style="font-size:4vw;">link 1</p>
+                    </a>
+                    <div class="flip-box-inner ">
+                        <div class="flip-box-front">
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/1MbbccCVK6WeOM1thub9rXj8QBACrEhzaUFeDG-HtPEl3r08P06jl_spryIWzoUzwoBWqZdwXCjNAwnMFuO53beuvSm9faS6siMhL5LF4NJiZd6Kzd0e6YdLa0Dnx0HDBpnJnv-MqA" />
+                        </div>
+                        <div class="flip-box-back">
+                            <h2>e commerce</h2>
+                            <h3>e furniture websites</h3>
+                            <p>responsive website.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="div2">
+                    <a href="mainsupreme.html">
+                        <p style="font-size:4vw;">link 2</p>
+                    </a>
+                    <div class="flip-box-inner ">
+                        <div class="flip-box-front">
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/55SYspGF5wjLa0VUL8AMTmn4qSTZ2lx4pOmRInCzEYMwjRi9LoxDsm9nI9Iqf5GuOc-ixyFSLlnZAGWn-4Wng6O5i4IIfjXlks5INzyO985YXNylPopRTxPcjeP7GIqSbMhBntnCIw" />
+                        </div>
+                        <div class="flip-box-back">
+                            <h2>e commerce</h2>
+                            <h3>supreme website</h3>
+                            <p>responsive website.
+                                log in form and check out page
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="div3">
+                    <a href="cat.html">
+                        <p style="font-size:4vw;">link 3</p>
+                    </a>
+                    <div class="flip-box-inner ">
+                        <div class="flip-box-front">
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/p2Rmxf1SuTfr3az1a2GZHeMjIJjNYzX1oot2e9fOsUC7l3bGw2_xHZBX_xMDvLO4LppS_bD6JOMcbZxFe3_uOvF6ENiA7JGaVDoIEzgzw_1QMk5CoVuTBsvF9852LscYiF7xylo4tw" />
+                        </div>
+                        <div class="flip-box-back">
+                            <h2>social media</h2>
+                            <h3>dating site</h3>
+                            <p>responsive website.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="div4">
+                    <a href="copy.html">
+                        <p style="font-size:4vw;">link 4</p>
+                    </a>
+                    <div class="flip-box-inner ">
+                        <div class="flip-box-front">
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/55SYspGF5wjLa0VUL8AMTmn4qSTZ2lx4pOmRInCzEYMwjRi9LoxDsm9nI9Iqf5GuOc-ixyFSLlnZAGWn-4Wng6O5i4IIfjXlks5INzyO985YXNylPopRTxPcjeP7GIqSbMhBntnCIw" />
+                        </div>
+                        <div class="flip-box-back">
+                            <h2>e commerce</h2>
+                            <h3>e furniture websites</h3>
+                            <p>responsive website.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+
+
+        <div id="contact">
+
+            <a name="contact-me"></a>
+            <div id="con-left">
+                <h1 class="hideme">Thank You</h1>
+                <p class="hideme">Feel free to contact me. I'd love to discuss about any available positions as a front
+                    end web developer;)</p>
+
+                <address>
+                    <a href="mailto: fernand0e88capitalv@gmail.com">
+                        <p style="font-size:2vw;"> Fernando Vergara</p>
+                    </a>
+
+                </address>
+            </div>
+
+        </div>
+
+
+        <form action="" method="POST">
+
+            <div class="hideme" id="name">
+                <label for="name">*Name</label>
+                <input type="text" name="name" placeholder="">
+            </div>
+
+            <div class="hideme" id="email">
+                <label for="_replyto">*Email Address</label>
+                <input type="email" name="_replyto" placeholder="">
+            </div>
+
+            <div class="hideme" id="message">
+                <label for="message">*Your Message</label>
+                <textarea name="message" id="" cols="30" rows="10"></textarea>
+            </div>
+
+            <div id="submit">
+                <input type="submit" value="SEND"> <input type="reset" value="RESET">
+
+            </div>
+
+
+        </form>
+
+        </div>
+
+        <div id="footer-above"></div>
+        <a id="to-top">
+            <div id="scroll-up"></div>
+        </a>
+
+    </body>
+
+</html>

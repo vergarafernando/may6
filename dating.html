@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+    <style>
+        /*body*/
+
+        body {
+            font-size: 1.2em;
+            max-width: 100vw;
+            max-height: auto;
+            font-family: 'Stylish', sans-serif;
+            margin: 0 auto;
+            padding: 0 auto;
+            background-image: url(.jpg), url(.jpg);
+            background-blend-mode: multiply;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: ;
+            background-attachment: fixed;
+            align-items: center;
+            background-color: ;
+        }
+
+        /*images*/
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #wrap {
+            width: 100%;
+
+            background-color: white;
+            align-text: center;
+            margin: ;
+            padding:
+        }
+
+        header {
+            width: 100%;
+        }
+
+        .cap {
+            width: 100%;
+            display: flex;
+            top: 0;
+            position: fixed;
+            z-index: 1;
+            padding: 20px;
+            color: #ddd;
+            justify-content: space-between;
+            background: -webkit-linear-gradient(45deg, rgba(133, 0, 133, 1) 0%, rgba(0, 128, 128, 1) 100%);
+
+            background: -o-linear-gradient(45deg, rgba(133, 0, 133, 1) 0%, rgba(0, 128, 128, 1) 100%);
+
+            background: -moz-linear-gradient(45deg, rgba(133, 0, 133, 1) 0%, rgba(0, 128, 128, 1) 100%);
+
+            background: linear-gradient(45deg, rgba(133, 0, 133, 1) 0%, rgba(0, 128, 128, 1) 100%);
+
+
+            flex-direction: row;
+            column-gap: 10px;
+            width: 100%;
+        }
+
+        .cap a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .cap a:hover {
+            color: plum;
+        }
+
+
+        /* The slider */
+        main {
+            width: 100%;
+            text-align: center;
+        }
+
+        .box {
+            margin-top: 4em;
+            padding: 5em;
+            border: 5px dashed #ddd;
+        }
+
+        color:#ddd;
+
+
+        .intro {
+            margin-top: 3em;
+        }
+
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            color: #ddd;
+            border-bottom: 22px outset #92FFF017;
+            border-radius: 20%;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .slider {
+            float: left;
+            display: block;
+            overflow: auto;
+            width: 100%;
+
+            background: -webkit-linear-gradient(45deg, rgba(128, 0, 0, 1) 0%, rgba(0, 128, 128, 1) 100%);
+
+            background: -o-linear-gradient(45deg, rgba(128, 0, 0, 1) 0%, rgba(0, 128, 128, 1) 100%);
+
+            background: -moz-linear-gradient(45deg, rgba(128, 0, 0, 1) 0%, rgba(0, 128, 128, 1) 100%);
+
+            background: linear-gradient(45deg, rgba(128, 0, 0, 1) 0%, rgba(0, 128, 128, 1) 100%);
+            color: white;
+
+            text-align: start;
+            overflow: ;
+            margin-top: 0px;
+        }
+
+        .slides {
+            margin-top: 0px;
+            width: 100%;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 1px;
+        }
+
+        .slides::-webkit-scrollbar {
+            width: 5px;
+            height: 4px;
+        }
+
+        .slides::-webkit-scrollbar-thumb {
+            background: #666;
+            border-radius: 10px;
+        }
+
+        .slides::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .slides>div {
+            scroll-snap-align: start;
+            border: 6px solid white;
+            flex-shrink: 0;
+            width: 100px;
+            height: 100px;
+            margin-top: 0px;
+            margin-right: ;
+            border-radius: 10px;
+            background: #eee;
+            transform-origin: center center;
+            transform: scale(1);
+            transition: transform 0.5s;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+        }
+
+        .slider>a {
+            display: inline;
+            width: 4.5rem;
+            height: 5.5rem;
+            background: white;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 0 0.5rem 0;
+            position: relative;
+        }
+
+        .slider>a:active {
+            top: 1px;
+            color: #1c87c9;
+        }
+
+        .slider>a:focus {
+            background: #eee;
+        }
+
+        .responsive {
+            height: 200px;
+            width: 200px;
+            border: 2px white solid;
+            border-radius: 50%;
+            float: left;
+        }
+
+
+
+
+        p {
+            color: #666;
+        }
+
+        section {}
+
+        .ad {
+            position: absolute;
+            right: 1%;
+            bottom: -18%;
+
+            padding-top: 200px;
+            padding-bottom: 110px;
+            padding-left: 10px;
+        }
+
+        .btn-group {
+            display: flex;
+            text-align: start;
+            flex-direction: column;
+            line-height: 120px;
+            padding: 35px;
+        }
+
+
+        .wall {
+            width: 100%;
+            text-align: start;
+            padding: 0 10 0 10;
+        }
+
+        .row {
+            display: flex;
+            width: 100%;
+
+
+            padding: 20px;
+            color: #666;
+            justify-content: space-between;
+
+
+            flex-direction: row;
+            column-gap: 10px;
+            width: 100%;
+        }
+
+
+        table {
+            border-collapse: collapse;
+            line-height: 100px;
+            width: 100%;
+            background-color: ;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .card {
+
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+
+        .title {
+            color: grey;
+            font-size: 18px;
+        }
+
+        button {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 22px;
+            color: black;
+        }
+
+        button:hover,
+        a:hover {
+            opacity: 0.7;
+        }
+
+
+
+        @media only screen and (max-width: 767px) {
+            .et_pb_column:last-child {
+                float: left !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+
+        <header>
+            <div class="cap">
+
+                <div><a href="screen.html"><i class="fa fa-user" style="font-size:24px"></i></a></div>
+                <div><a href="screen.html"><i class="fa fa-bell-o" style="font-size:24px"></i></a></div>
+                <div><a href="screen.html"><i class="fa fa-camera-retro" style="font-size:24px"></i></a></div>
+                <div><a href=""><i class="fa fa-commenting" style="font-size:24px"></i></a></div>
+            </div>
+        </header>
+
+
+
+        <main>
+            <div class="box">
+                <p>(advertisment)</p>
+            </div>
+
+
+            <!--slider-->
+            <div class="slider">
+                <div>
+                    <a href="#slide-1"><img
+                            src="https://images.pexels.com/photos/2049413/pexels-photo-2049413.jpeg?cs=srgb&dl=low-angle-photo-of-woman-wearing-black-top-2049413.jpg&fm=jpg"
+                            class="responsive"></a>
+                </div>
+                <div>
+                    <p>John doe</p>
+                </div>
+                <div>
+                    el Monte Ca</div>
+            </div>
+            <div class="slides">
+                <div id="slide-1"><img
+                        src="https://images.pexels.com/photos/2592282/pexels-photo-2592282.jpeg?cs=srgb&dl=photo-of-woman-with-curly-hair-2592282.jpg&fm=jpg">
+                </div>
+                <div id="slide-2"><img
+                        src="https://images.pexels.com/photos/2762161/pexels-photo-2762161.jpeg?cs=srgb&dl=photo-of-woman-with-curly-hair-2762161.jpg&fm=jpg">
+                </div>
+                <div id="slide-3"><img
+                        src="https://images.pexels.com/photos/1716506/pexels-photo-1716506.jpeg?cs=srgb&dl=selective-focus-photo-of-woman-1716506.jpg&fm=jpg">
+                </div>
+                <div id="slide-4"><img
+                        src="https://images.pexels.com/photos/2397986/pexels-photo-2397986.jpeg?cs=srgb&dl=photo-of-woman-wearing-black-top-2397986.jpg&fm=jpg">
+                </div>
+                <div id="slide-5"><img
+                        src="https://images.pexels.com/photos/2297364/pexels-photo-2297364.png?cs=srgb&dl=photo-of-woman-wearing-black-cap-2297364.jpg&fm=jpg">
+                </div>
+
+            </div>
+    </div>
+    <br><br>
+
+    <div class="wall">
+        <div>about me</div>
+        <div>tell us about yourself</div>
+
+        <div class="row">
+            <i class='fas fa-fist-raised' style='font-size:24px'></i>
+            <i class='fas fa-hotdog' style='font-size:24px'></i>
+            <i class='fas fa-dumbbell' style='font-size:24px'></i>
+            <i class='fas fa-user-astronaut' style='font-size:24px'></i>
+            <i class='fas fa-joint' style='font-size:24px'></i>
+        </div>
+        <table>
+            <tr>
+                <th></th>
+
+                <th></th>
+            </tr>
+            <tr>
+                <td>orientation</td>
+
+                <td>straight</td>
+            </tr>
+            <tr>
+                <td>relationship status</td>
+
+                <td>single</td>
+            </tr>
+
+            <tr>
+                <td>popularity</td>
+
+                <td>high</td>
+            </tr>
+            <tr>
+                <td>looking for</td>
+
+                <td>friends</td>
+            </tr>
+            <td>height</td>
+
+            <td>5'10</td>
+            </tr>
+            <tr>
+                <td>body type</td>
+
+                <td>average</td>
+            </tr>
+
+            <tr>
+                <td>religion</td>
+
+                <td>Christian</td>
+            </tr>
+            <tr>
+                <td>has children</td>
+
+                <td>no</td>
+            </tr>
+        </table>
+
+    </div>
+
+
+
+
+
+    </div>
+    <br><br>
+    <div class="card">
+        <img src="">
+        <h1>Fernando Vergara</h1>
+        <p class="title">web developer</p>
+
+        <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+        <a href="mailto: fernand0e88capitalv@gmail.com"> contact me</a>
+    </div>
+
+    <br><br>
+    <div class="card">
+        <img src="">
+        <h1>Fernando Vergara</h1>
+        <p class="title">web developer</p>
+        <p>Harvard University</p>
+        <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+        <a href="mailto: fernand0e88capitalv@gmail.com"> contact me</a>
+    </div>
+
+    <br><br>
+    <div class="card">
+        <img src="">
+        <h1>Fernando Vergara</h1>
+        <p class="title">web developer</p>
+
+        <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+        <a href="mailto: fernand0e88capitalv@gmail.com"> contact me</a>
+    </div>
+
+    <br><br>
+    <div class="card">
+        <img src="">
+        <h1>Fernando Vergara</h1>
+        <p class="title">CEO & Founder, Example</p>
+
+        <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+        <a href="mailto: fernand0e88capitalv@gmail.com"> contact me</a>
+    </div>
+    <div class="box">
+        <p>(advertisment)</p>
+    </div>
+    <br><br>
+    <div class="card">
+        <img src="">
+        <h1>Fernando Vergara</h1>
+        <p class="title">web developer</p>
+
+        <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+        <a href="mailto: fernand0e88capitalv@gmail.com"> contact me</a>
+    </div>
+
+    <br><br>
+    <div class="card">
+        <img src="">
+        <h1>Fernando Vergara</h1>
+        <p class="title">C
+            web developer</p>
+
+        <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+        <a href="mailto: fernand0e88capitalv@gmail.com"> contact me</a>
+    </div>
+    <br><br>
+    <div class="card">
+        <img src="">
+        <h1>Fernando Vergara</h1>
+        <p class="title">web developer</p>
+
+        <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+        <a href="mailto: fernand0e88capitalv@gmail.com"> contact me</a>
+    </div>
+
+    <br><br>
+    <div class="card">
+        <img src="">
+        <h1>Fernando Vergara</h1>
+        <p class="title">web developer</p>
+
+        <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+        </div>
+        <a href="mailto: fernand0e88capitalv@gmail.com"> contact me</a>
+
+    </div>
+    </main>
+
+
+
+    <div class="box">
+        <p>(advertisment)</p>
+    </div>
+
+
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myDIV");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,2781 @@
+<!DOCtype html>
+<html>
+<link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barrio&display=swap" rel="stylesheet">
+<link hrehref='https://drive.google.com/folderview?id=13_Bc1DqzEMZQxkbVlYak2YDyWo3WqKlO' rel='stylesheet'>
+
+<link href='https://fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Actor&display=swap" rel="stylesheet">
+
+<head>
+
+    <title>
+
+
+    </title>
+
+</head>
+<style>
+    @import "compass/css3";
+
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+
+
+    body,
+    html {
+
+        max-width: 100vw;
+        height: 100%;
+        margin: 0;
+        font-family: 'Actor', sans-serif;
+        background-color: var(--theme-bg-color);
+        text-align: center;
+
+    }
+
+
+
+    .responsive {
+
+        -webkit-clip-path: circle(70% at 70% 20%);
+        clip-path: circle(70% at 70% 20%);
+    }
+
+    .respond {
+        -webkit-clip-path: ellipse(50% 65% at 70% 50%);
+        clip-path: ellipse(50% 65% at 70% 50%);
+    }
+
+
+
+
+
+
+    p {
+        margin-top: 1em;
+        line-height: 1.5;
+        font-family: 'Quattrocento Sans', sans-serif;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        padding: 1em;
+        width: 100%;
+        background: $lightgray;
+        border-bottom: 2px solid lighten($gray, 50%);
+        z-index: 10;
+        @include transform(translateZ(0));
+    }
+
+
+    nav {
+        display: inline-block;
+        text-transform: capitalize;
+    }
+
+    section {
+        position: relative;
+        min-height: 400px;
+        padding: 2em;
+        overflow: hidden;
+
+    }
+
+
+
+    ul {
+        margin: 1em;
+    }
+
+    li {
+        margin: .5em;
+    }
+
+    .red {
+        color: $red;
+    }
+
+    .block {
+        position: absolute;
+        max-width: 500px;
+        padding: 2em;
+    }
+
+    .block--bl {
+        bottom: 0;
+        left: 0;
+    }
+
+    .block--br {
+        bottom: 0;
+        right: 0;
+    }
+
+    .nav-title {
+        display: inline-block;
+        font-weight: 300;
+    }
+
+
+
+    .img-building {
+        position: absolute;
+    }
+
+    #img-header {
+        top: 50px;
+        left: 400px;
+    }
+
+    #img-search {
+        top: 100px;
+        left: 550px;
+    }
+
+    #img-toolbar {
+        bottom: 30px;
+        left: 600px;
+    }
+
+    #img-group {
+        bottom: 30px;
+        left: 100px;
+    }
+
+    #img-image {
+        bottom: 30px;
+        left: 600px;
+    }
+
+    #img-product {
+        bottom: 30px;
+        left: 200px;
+    }
+
+    #img-lucky {
+        bottom: 50px;
+        left: 700px;
+    }
+
+    #img-island {
+        bottom: 50px;
+        left: 200px;
+    }
+
+    #bg-canvas {
+        position: fixed;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    #wraps {
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 90% 100%;
+
+        position: relative;
+        width: 100%;
+        margin: 0 5% 0 5;
+
+    }
+
+    .two-pair {
+        height: 100vh;
+        width: 100%;
+
+    }
+
+    .text1 {
+        width: 100%;
+        font-family: 'Barrio', cursive;
+        background-color: transparent;
+        color: white;
+        margin-top: 20%;
+        font-weight: 100;
+        line-height: 50px;
+        justify-content: justify;
+        margin: 0 5% 0 5;
+        padding-right: 40px;
+        padding-left: 40px;
+        text-align: center;
+
+
+
+
+    }
+
+    .text2 {
+        color: yellow;
+        font-family: 'Barrio', cursive;
+
+        margin: 5%;
+        justify-content: center;
+        letter-spacing: 1px;
+        line-height: 55px;
+        padding-right: 30px;
+        padding-left: 30px;
+        text-align: center;
+    }
+
+
+
+
+
+    video {
+        position: absolute;
+        z-index: -100;
+        width: 100%;
+        height: 30vh;
+        opacity: 0.2;
+    }
+
+    body .timer {
+
+        border: 1px inset black;
+        padding: 1px;
+        width: 90%;
+        height: 10vh;
+        margin-left: 5%;
+        position: relative;
+
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-around;
+        -webkit-box-align: center;
+        align-items: center;
+    }
+
+    body .timer .separator {
+
+        height: 64px;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex-direction: column;
+        -webkit-box-pack: justify;
+        justify-content: space-around;
+
+    }
+
+
+
+    body .timer .label {
+        font-size: 20px;
+        font-weight: 300;
+        opacity: 0.3;
+
+
+    }
+
+
+    #wrapper {
+        width: 100%;
+        height: 90vh;
+        margin: 5%;
+
+    }
+
+
+
+    .two {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .alert .btn {
+        width: 100px;
+        height: 20px;
+    }
+
+    .logos {
+
+        width: 30%;
+        height: 10vh;
+        margin-top: 0;
+
+    }
+
+    aside {
+        color: transparent;
+        height: 20vh;
+        width: 90%;
+        margin-right: 5%;
+        background-repeat: repeat;
+        background-attachment: fixed;
+        background-position: contain;
+        background-image: url(https://lh3.googleusercontent.com/CZQm8cThgVp1j4C-1Xmmwi78BPWDKR6kUzojGrpHJby9NXjGgKg0a7IbHEMeTBlUh9lrtyWb_fUYPefgrtn3Ak2DFEDcJWSMBTXLmSfA-dsGeWxwbs8eJmGFd_ZGUAk04TusQmLtXg);
+    }
+
+    IMG {
+
+        width: 100%;
+        height: 100%;
+    }
+
+
+    nav {
+        width: 100vw;
+        position: fixed;
+        margin: 0 5% 0 5;
+        top: 0%;
+        left: 0;
+        z-index: 1;
+        background-color: white;
+
+
+    }
+
+    .mane {
+        position: absolute;
+        top: 10%;
+        left: 25%;
+    }
+
+    .mane h4 {
+
+        font-family: "Bahianita", cursive;
+        letter-spacing: px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .sidebar {
+        height: 88%;
+        /* 100% Full-height */
+        margin-top: 20%;
+        width: 0;
+        /* 0 width - change this with JavaScript */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Stay on top */
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        /* Black*/
+        overflow-x: hidden;
+        /* Disable horizontal scroll */
+        padding-top: 60px;
+        /* Place content 60px from the top */
+        transition: 0.5s;
+        /* 0.5 second transition effect to slide in the sidebar */
+    }
+
+    /* The sidebar links */
+    .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 35px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    /* When you mouse over the navigation links, change their color */
+
+    /* Position and style the close button (top right corner) */
+    .sidebar .closebtn {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        font-size: 36px;
+        margin-left: 0px;
+    }
+
+    /* The button used to open the sidebar */
+    .openbtn {
+        font-size: 20px;
+        cursor: pointer;
+        color: black;
+        position: absolute;
+        border: none;
+        top: 10%;
+        left: 4%;
+
+    }
+
+    .openbtn:hover {}
+
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+        transition: margin-left 0.5s;
+        /* If you want a transition effect */
+    }
+
+    /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+    #main {
+        transition: margin-left 0.5s;
+        /* If you want a transition effect */
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+        .sidebar {
+            padding-top: 15px;
+            background-color: blue;
+        }
+
+        .sidebar a {
+            font-size: 18px;
+        }
+    }
+
+
+    #main {
+
+        padding: 16px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        height: 90px;
+        overflow: hidden;
+        margin-top: 0;
+    }
+
+    #main h2 {
+        background-color: black;
+    }
+
+    i {
+        color: black;
+    }
+
+    .main {
+        margin-top: 8%;
+    }
+
+    #mainer {
+        margin-top: 0;
+    }
+
+    #mainer {
+        height: 88%;
+        /* 100% Full-height */
+        margin-top: 20%;
+        width: 0;
+        /* 0 width - change this with JavaScript */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Stay on top */
+        bottom: 0;
+        right: 0;
+        background-color: black;
+        /* Black*/
+        overflow-x: hidden;
+        /* Disable horizontal scroll */
+        padding-top: 60px;
+        /* Place content 60px from the top */
+        transition: 0.5s;
+        /* 0.5 second transition effect to slide in the sidepanel */
+    }
+
+    /* The sidepanel links */
+    #mainer a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    /* When you mouse over the navigation links, change their color */
+
+
+    /* Position and style the close button (top right corner) */
+    #mainer .closebtn2 {
+        position: absolute;
+        top: 0;
+        font-size: 36px;
+    }
+
+    .banner {
+        height: 30%;
+
+    }
+
+    /* Style the button that is used to open the sidepanel */
+    .openbtn2 {
+        position: absolute;
+        top: 10%;
+        right: 5%;
+        font-size: 20px;
+        cursor: pointer;
+        border: none;
+
+
+
+    }
+
+    .openbtn2:hover {
+        background-color: #444;
+    }
+
+    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+    @media screen and (max-height: 450px) {
+        .sidebar {
+            padding-top: 15px;
+        }
+
+        .sidebar a {
+            font-size: 20px;
+        }
+    }
+
+
+
+
+    .bg-image {
+        /* Full height */
+
+        width: 100%;
+
+        opacity: .9;
+        background-image: url(tv.gif);
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    #rapper {
+        height: 100%;
+    }
+
+    /* Position text in the middle of the page/image */
+
+
+    #rap img {
+        width: 90%;
+
+    }
+
+    @import url('https://fonts. yogoogleapis.com/css?family=Open+Sans');
+
+    :root {
+        --theme-bg-color: #3761af;
+        --theme-color: white;
+
+
+    }
+
+
+    .logo {
+        width: 100%;
+        height: 10%;
+        margin: 10px;
+        -webkit-clip-path: inset(45% 0% 33% 10% round 10px);
+        clip-path: inset(45% 0% 33% 10% round 10px);
+    }
+
+    h2 {
+        color: white;
+    }
+
+    .icon-bar {
+
+
+        padding: 4px;
+
+
+    }
+
+
+
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+        justify-content: center;
+
+        position: relative;
+        margin-top: 0%;
+
+    }
+
+    #myVideo {
+        height: 100%;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+        width: 90%;
+        height: 40%;
+        margin: 5% auto;
+        text-align: center;
+        font-size: 2em;
+        background-color: transparent;
+
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+        cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 9%;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 1em;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    banner {}
+
+    /* Container for image text */
+    .caption-container {
+
+        background-color: #222;
+        padding: 2px 16px;
+        color: white;
+    }
+
+    .row {
+        content: "";
+        display: inline-block;
+
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+
+    }
+
+    /* Six columns side by side */
+    .column {
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: no-wrap;
+        justify-content: space-between;
+
+
+        height: 40%;
+        width: 13.96%;
+    }
+
+    .responsive {
+        width: 300px;
+        height: 350px;
+        margin-left: 20px;
+
+    }
+
+    .res {
+        width: 20px;
+        height: 80px;
+        -webkit-clip-path: circle(50%);
+        clip-path: circle(50%);
+
+    }
+
+    .responce {
+        float: left;
+        margin-top: 5%;
+        width: 60%;
+        height: 300px;
+        -webkit-clip-path: circle(50%);
+        clip-path: circle(50%);
+
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+        opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+
+    }
+
+    main {
+        background-image: url(.jpg);
+        background-repeat: no-repeat;
+        background-position: contain center;
+        background-size: 100% 100%;
+
+        margin-top: 0px;
+
+    }
+
+    .hello {
+        opacity: 1 !important;
+    }
+
+    .card img {
+        height: 111px;
+    }
+
+    .card {
+        background-image: url(https://lh3.googleusercontent.com/iNRiQkJSKhUjjh0ONCyRjlhQv4aCrnn3D-OLsGjgRwa0nVIu5ZFFQXi2mnLZvGR8T3UDWTVxnNzuFtFfbg3jQoLMv9Wern2gKx2h-L3VA1DSp1mFUkj_mdX7rohRutSn7uR_sOPlFA);
+        margin-left: 5%;
+        width: 90%;
+        height: 420px;
+        border: 19px groove rgb(54, 163, 140);
+        text-align: right;
+        font-family: arial;
+        font-size: 1em;
+
+    }
+
+    .card p {
+        margin-right: 10px;
+    }
+
+    .price {
+        color: grey;
+        font-size: 1em;
+        margin-right: 1px;
+    }
+
+    .card button i {
+        color: white;
+    }
+
+    .card button {
+        outline: 0;
+        padding: 0px;
+        color: white;
+        background-color: #001722;
+        text-align: center;
+        cursor: pointer;
+        width: 25%;
+        font-size: 2em;
+
+    }
+
+    .card button:hover {
+        opacity: 0.7;
+        color: plum;
+    }
+
+    .full {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 380px;
+        height: 100%;
+
+        z-index: 1;
+        background-color: tan;
+    }
+
+    .re {
+        float: left;
+        width: 50%;
+
+    }
+
+    .full .content {
+        background-color: rgba(0, 0, 0, 0.75) !important;
+        height: 100%;
+        width: 100%;
+        display: grid;
+    }
+
+    .full .content img {
+        left: 50%;
+        transform: translate3d(0, 0, 0);
+        animation: zoomin 1s ease;
+        width: 100%;
+        height: 100%;
+        margin: auto;
+        color: white;
+    }
+
+    .byebye {
+        opacity: 0;
+    }
+
+    .byebye:hover {
+        transform: scale(0.2) !important;
+    }
+
+    #gallery {
+        border: 2px solid transparent;
+        padding: 2%;
+
+        height: auto;
+        width: 90%;
+    }
+
+    .gallery {
+        display: grid;
+        margin-top: 10px;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-auto-rows: 8px;
+
+        margin: 5% auto;
+        height: 100%;
+    }
+
+    .gallery img {
+        width: 250px;
+
+        height: 150px;
+        border-radius: 8%;
+        box-shadow: 0 0 16px #333;
+        transition: all 1.5s ease;
+        background-color: transparent;
+    }
+
+
+    .gallery .content {
+        padding: 2%;
+        height: 160px;
+    }
+
+    .gallery .gallery-item {
+        transition: grid-row-start 300ms linear;
+        transition: transform 300ms ease;
+        transition: all 0.5s ease;
+        cursor: pointer;
+        background-color: #ddd;
+        color: white;
+        margin: 2px;
+        height: 10px;
+
+    }
+
+    @media (max-width: 600px) {
+        .gallery {
+            grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+        }
+    }
+
+
+    @media (max-width: 400px) {
+        .gallery {
+            grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+        }
+    }
+
+    @-moz-keyframes zoomin {
+        0% {
+            max-width: 50%;
+            transform: rotate(-30deg);
+            filter: blur(4px);
+        }
+
+        30% {
+            filter: blur(4px);
+            transform: rotate(-80deg);
+        }
+
+        70% {
+            max-width: 50%;
+            transform: rotate(45deg);
+        }
+
+        100% {
+            max-width: 100%;
+            transform: rotate(0deg);
+        }
+    }
+
+    @-webkit-keyframes zoomin {
+        0% {
+            max-width: 50%;
+            transform: rotate(-30deg);
+            filter: blur(4px);
+        }
+
+        30% {
+            filter: blur(4px);
+            transform: rotate(-80deg);
+        }
+
+        70% {
+            max-width: 50%;
+            transform: rotate(45deg);
+        }
+
+        100% {
+            max-width: 100%;
+            transform: rotate(0deg);
+        }
+    }
+
+    @-o-keyframes zoomin {
+        0% {
+            max-width: 50%;
+            transform: rotate(-30deg);
+            filter: blur(4px);
+        }
+
+        30% {
+            filter: blur(4px);
+            transform: rotate(-80deg);
+        }
+
+        70% {
+            max-width: 50%;
+            transform: rotate(45deg);
+        }
+
+        100% {
+            max-width: 100%;
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes zoomin {
+        0% {
+            max-width: 50%;
+            transform: rotate(-30deg);
+            filter: blur(4px);
+        }
+
+        30% {
+            filter: blur(4px);
+            transform: rotate(-80deg);
+        }
+
+        70% {
+            max-width: 50%;
+            transform: rotate(45deg);
+        }
+
+        100% {
+            max-width: 100%;
+            transform: rotate(0deg);
+        }
+    }
+
+    section {
+        width: 100%;
+        width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+
+    section1 {
+        background-image: url(https://lh3.googleusercontent.com/4XA_pG0TVJ3mAnAAPoXNkukibib3MRH30dMLEim00gymLXSWgdClUyFiraqJLLsH4PofvRWBwbt-YU1ZMutOJdv_4jLMOrkUGXOOWScTobWGo7745VVhDbZzk5EvTdqJ1fz-QDsh0Q);
+        background-blend-mode: lighten;
+        margin-top: 50%;
+        height: 400px;
+        color: blue;
+        height: 500px;
+
+        width: 100%;
+    }
+
+    .scroll {
+        width: 100%;
+        height: 30vh;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .scroll {
+        background: url(file.jpg) no-repeat fixed / cover;
+        background-size: 100% 50%;
+    }
+
+    .div2 {
+        border: 3px solid #4CAF50;
+        padding: 5px;
+    }
+
+    .img1 {
+        float: right;
+        border: 2px solid black;
+    }
+
+    .clearfix {
+        width: 90%;
+        overflow: auto;
+
+        line-height: 50px;
+        letter-spacing: 1px;
+        border: 1 px solid black;
+        margin: 5% auto;
+    }
+
+    .clearfix p {
+        padding-right: 10px;
+
+    }
+
+    .img2 {
+        float: left;
+        width: 350px;
+        height: 200px;
+        border-radius: 8%;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .accordion {
+        width: 90%;
+        margin: 5% auto;
+    }
+
+    .accordion h1,
+    h2,
+    h3,
+    h4 {
+        cursor: pointer;
+    }
+
+    .accordion h2,
+    h3,
+    h4 {
+        font-family: "News Cycle";
+    }
+
+    .accordion h1 {
+        padding: 15px 20px;
+        background-color: #333;
+        font-family: Lobster;
+        font-size: 1.5rem;
+        font-weight: normal;
+        color: tan;
+    }
+
+    .accordion h1:hover {
+        color: orange;
+    }
+
+    .accordion h1:first-child {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .accordion h1:last-of-type {
+        border-radius: 0 0 10px 10px;
+    }
+
+    .accordion h1:not(:last-of-type) {
+        border-bottom: 1px dotted #1abc9c;
+    }
+
+    .accordion div,
+    .accordion p {
+        display: none;
+    }
+
+    .accordion h2 {
+        padding: 5px 25px;
+        background-color: tan;
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    .accordion h2:hover {
+        background-color: #09ab8b;
+    }
+
+    .accordion h3 {
+        padding: 5px 30px;
+        background-color: #b94152;
+        font-size: .9rem;
+        color: #ddd;
+    }
+
+    .accordion h3:hover {
+        background-color: #a93142;
+    }
+
+    .accordion h4 {
+        padding: 5px 35px;
+        background-color: #ffc25a;
+        font-size: .9rem;
+        color: #af720a;
+    }
+
+    .accordion h4:hover {
+        background-color: #e0b040;
+    }
+
+    .accordion p {
+        padding: 15px 35px;
+        background-color: #ddd;
+        font-family: "Georgia";
+        font-size: .8rem;
+        color: #333;
+        line-height: 1.3rem;
+    }
+
+    .accordion .opened-for-codepen {
+        display: block;
+    }
+
+    .map {
+        width: 100%;
+        padding: 5%;
+    }
+
+    .carousel {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .carousel h1 {
+        color: white;
+        font-size: 70px;
+        margin: 0 0 0.25em 0;
+        overflow: hidden;
+        padding: 0.25em 0 0 0;
+        text-transform: uppercase;
+    }
+
+    h1 span {
+        display: block;
+    }
+
+    .seg {
+        clear: left;
+        float: left;
+        font-weight: 900;
+        margin-bottom: 0.25em;
+        padding: 0.125em;
+        position: relative;
+    }
+
+    .seg:first-child {
+        font-size: 0.5em;
+        font-weight: bold;
+        padding: 0.25em;
+    }
+
+    .bg {
+        -moz-transition: right 1s;
+        -webkit-transition: right 1s;
+        -ms-transition: right 1s;
+        -o-transition: right 1s;
+        transition: right 1s;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        right: 0%;
+        top: 0;
+        z-index: -1;
+    }
+
+    .bg.hidden {
+        right: 100%;
+    }
+
+    .truth .bg {
+        background: #90b23d;
+    }
+
+    .truth span:first-child .bg {
+        background: #5c7620;
+    }
+
+    .ritalin .bg {
+        background: #5398b8;
+    }
+
+    .ritalin span:first-child .bg {
+        background: #356a83;
+    }
+
+    .taste .bg {
+        background: #d1970d;
+    }
+
+    .taste span:first-child .bg {
+        background: #a27509;
+    }
+
+    .pantone .bg {
+        background: #ca0606;
+    }
+
+    .pantone span:first-child .bg {
+        background: #920505;
+    }
+
+    .subtitle {
+        justify-content: justify;
+        text-align: start;
+        -moz-transition: opacity 1s;
+        -ms-transition: opacity 1s;
+        -o-transition: opacity 1s;
+        -webkit-transition: opacity 1s;
+        transition: opacity 1s;
+        color: #222;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: 0.1em;
+        line-height: 1.5;
+        opacity: 1;
+        text-transform: uppercase;
+    }
+
+    .subtitle.hidden {
+        opacity: 0;
+    }
+
+    .subtitle a {
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .truth .subtitle a {
+        color: #5c7620;
+    }
+
+    .ritalin .subtitle a {
+        color: #5398b8;
+    }
+
+    .taste .subtitle a {
+        color: #d1970d;
+    }
+
+    .pantone .subtitle a {
+        color: #ca0606;
+    }
+
+    footer {
+        height: 300px;
+        position: fixed;
+        background-image: url(wall.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 100%;
+        margin: 5% auto;
+        bottom: 0;
+        position: relative;
+
+    }
+
+
+
+
+
+
+
+    div.scrollmenu2 {
+        position: absolute;
+        bottom: 0;
+        right: 5%;
+        background-color: black;
+        color: white;
+        opacity: .6;
+        height: 300px;
+        width: 90%;
+        overflow: local;
+        white-space: nowrap;
+        text-align: center;
+    }
+
+    div.scrollmenu2 a {
+        font-size: 1em;
+        display: inline-flex;
+        color: white;
+        text-align: center;
+        padding: 10 10px 10 10;
+        text-decoration: none;
+        letter-spacing: 1px;
+    }
+
+    div.scrollmenu12 a:hover {
+        color: tan;
+
+    }
+
+
+
+    .icon-bar2 {
+        z-index: 1;
+        position: fixed;
+        top: 39%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        height: 50px;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Style the icon bar links */
+    .icon-bar2 a {
+        display: block;
+        text-align: center;
+        height: 50px;
+        width: 15px;
+        opacity: .8;
+        transition: all 0.3s ease;
+
+        font-size: 20px;
+    }
+
+    /* Style the social media icons with color, if you want */
+    .icon-bar2 a:hover {
+        background-color: #000;
+    }
+
+    .facebook {
+        background: #3B5998;
+        color: white;
+
+    }
+
+    .twitter {
+        background: #55ACEE;
+        color: white;
+    }
+
+    .google {
+        background: #dd4b39;
+        color: white;
+    }
+
+    .linkedin {
+        background: #007bb5;
+        color: white;
+    }
+
+    .youtube {
+        background: #bb0000;
+        color: white;
+    }
+
+    address {
+        position: absolute;
+        bottom: 0;
+        left: 35%;
+    }
+
+    @media screen and (max-height: 450px) {
+        .overlay a {
+            font-size: 20px
+        }
+
+        .overlay .closebtn {
+            font-size: 40px;
+            top: 15px;
+            right: 35px;
+        }
+    }
+</style>
+
+<body>
+    <section>
+        <div id="wraps">
+            <div class="two-pair">
+                <div class="text1">
+                    <h3 style="font-size:2vw;">all products are made in America</h3><br>
+                    <h1 style="font-size:5vw;">For Any One Who Wants To <ins>Start An Online Business</ins> But Doesn't
+                        Know
+                        Where To Begin</h1>
+                </div>
+
+    </section>
+    <section id="search">
+        <div class="block block--bl js-animates js-animates--opacity">
+            <img class="responsive"
+                src="https://lh3.googleusercontent.com/lhIyWvB68-Njk0o8wFK6HHZHJF52x1P0_Iz0wvRhO19wmPY9Dq7JXiCczxrWq_HQy0fAAt_c8e_xzVSF5UNInLyGl2NWzctIQGRBcZdK14gwpe2HCeleP2oxHxw47A0_ipKwFVK2KQ"
+                width="600" height="315" />
+            <h2>Animation.</h2>
+            <p>
+                We can leverage a great deal of power by using a fixed canvas as your background. Pay attention to the
+                animated clouds as you scroll and note they are moving at a different speed than the rest of the
+                content. This allows us to use canvas for rich parallax effects.
+            </p>
+        </div>
+    </section>
+    <section id="news">
+        <div class="block block--br js-animates js-animates--opacity">
+            <img class="responsive"
+                src="https://lh3.googleusercontent.com/2EP_NgHRfyPaBhA8r-rhO5OCmWWvuPBzsTl6vaT3siVxxOMQXAY7gsZUFvuuOg5COzFdop2u4CLlyU4gHLo7-IcJ8vq8C1t2ru2K_OWtNVAOZPB3C-gI6X6Yj5wL3jeKw0MFYJO7sQ"
+                width="600" height="315" />
+            <h2>Generated Content.</h2>
+            <p>
+                Because you're using a canvas, you can reuse small image resources without simply repeating the way you
+                would typical backgrounds. You can use generated placement from a tool or various algorithms to create
+                interesting mathematical patterns.
+            </p>
+        </div>
+    </section>
+    <section id="toolbar">
+        <img class="respond"
+            src="https://lh3.googleusercontent.com/7W-3cVVQoZq0aMSQuvcCdDHz9-tuceUHVpRi-NXT8xIXTefG8OUMNiCEtn3uy0QDRWd1JOF_wut8_3Vpy4EeupwHPkKwuiNf355cpF4FIpp9sM0lgSKG-joy5fHl2LVLELGJoJlGaQ"
+            width="600" height="315" />
+        <div class="block block--bl js-animates js-animates--opacity">
+            <h2>Save the DOM.</h2>
+            <p>
+                Typically we see people use DOM elements combined with CSS Transforms for parallax effects and rich
+                animation. Rather than relying on DOM elements, canvas is an optimized drawing surface that saves the
+                browser from doing a variety work like calculating styles and layout. This is especially valuable for
+                non-semantic content.
+            </p>
+        </div>
+    </section>
+    <section id="groups">
+        <img class="respond"
+            src="https://lh3.googleusercontent.com/dQGOBvHYQy-EzaQI1Zku4lVKoQeZDQsWH-voVIYDsOYJ90I29j3M3Uwh08wdmUgtDg5an7bKl9SoJvVsU0ENyvcPCwtHZkZC8r0OHn1TUAPe0ICPLDbrs6cMlJrBQO8NoYyAUFPymw"
+            width="600" height="315" />
+        <div class="block block--br js-animates js-animates--opacity">
+            <h2>Don't Forget Semantics.</h2>
+            <p>
+                Because we want our semantic content retained outside of our canvas, we can animate this in and out with
+                CSS to add visual interest. This layering of semantic and non-semantic content allows us to optimize how
+                we use them. We can keep our semantic content in the DOM and our non-semantic content pushed onto a
+                canvas.
+            </p>
+        </div>
+    </section>
+    <section id="images">
+        <img class="respond"
+            src="https://lh3.googleusercontent.com/j34IXQhEmIoIQbCmW2U324UEIrNZT76Jg3ipr96uTfr6DrQgDCFWUOI2sZibZMjSKTxjyXJqbS4MuWRIrud5qEZF7Ic22TAshRZwFAokT8ZAX0nnyMgqO1qeNwbXJu8ffA8Orz1F4A"
+            width="600" height="315" />
+        <div class="block block--bl js-animates js-animates--opacity">
+            <h2>Nam fermentum egestas tellus vel accumsan.</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a ipsum a orci ultricies facilisis. Sed
+                viverra ipsum eu vehicula elementum. Etiam vitae neque nec nisl euismod congue non a nibh. Maecenas
+                lacinia sem malesuada quam tincidunt, id molestie ante iaculis. Integer in dui sed diam mollis
+                ullamcorper ac id lorem. Morbi vel justo et augue pretium dignissim.
+            </p>
+        </div>
+    </section>
+    <section id="products">
+        <div class="block block--br js-animates js-animates--opacity">
+            <h2>Nam fermentum egestas tellus vel accumsan.</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a ipsum a orci ultricies facilisis. Sed
+                viverra ipsum eu vehicula elementum. Etiam vitae neque nec nisl euismod congue non a nibh. Maecenas
+                lacinia sem malesuada quam tincidunt, id molestie ante iaculis. Integer in dui sed diam mollis
+                ullamcorper ac id lorem. Morbi vel justo et augue pretium dignissim.
+            </p>
+        </div>
+    </section>
+    <section id="lucky">
+        <div class="block block--bl js-animates js-animates--opacity">
+            <h2>Nam fermentum egestas tellus vel accumsan.</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a ipsum a orci ultricies facilisis. Sed
+                viverra ipsum eu vehicula elementum. Etiam vitae neque nec nisl euismod congue non a nibh. Maecenas
+                lacinia sem malesuada quam tincidunt, id molestie ante iaculis. Integer in dui sed diam mollis
+                ullamcorper ac id lorem. Morbi vel justo et augue pretium dignissim.
+            </p>
+        </div>
+    </section>
+    <section id="more">
+        <div class="block block--br js-animates js-animates--opacity">
+            <h2>Nam fermentum egestas tellus vel accumsan.</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a ipsum a orci ultricies facilisis. Sed
+                viverra ipsum eu vehicula elementum. Etiam vitae neque nec nisl euismod congue non a nibh. Maecenas
+                lacinia sem malesuada quam tincidunt, id molestie ante iaculis. Integer in dui sed diam mollis
+                ullamcorper ac id lorem. Morbi vel justo et augue pretium dignissim.
+            </p>
+        </div>
+    </section>
+    <section>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a ipsum a orci ultricies facilisis. Sed
+            viverra ipsum eu vehicula elementum. Etiam vitae neque nec nisl euismod congue non a nibh. Maecenas lacinia
+            sem malesuada quam tincidunt, id molestie ante iaculis. Integer in dui sed diam mollis ullamcorper ac id
+            lorem. Morbi vel justo et augue pretium dignissim.
+        </p>
+
+
+    </section>
+
+
+
+
+    </div>
+    </div>
+    </div>
+
+    </div>
+
+    <div Id="wrapper">
+        <section1>
+
+
+            <div class="logos"><img
+                    src="https://lh3.googleusercontent.com/q8j49aEuQZstDeTgzs5nmir3RnRRf2C8K6f_6hoOX6C9UMBtnbl6Wrwfq9-i3fq9jvnGdgUnl-v5cK-7zjUs59IrZTufOpJEf5-T8-ajoTb8fFHiTZeNs2GXxkTL2Se-e57cl4Ft8Q"
+                    width="" height="220" /></div>
+        </section1>
+        <aside>
+
+            <div class="bg-pic"></div>
+        </aside>
+
+
+
+
+    </div>
+    <div class="mane">
+        <h4>
+            Industrial STORE
+        </h4>
+    </div>
+    <nav>
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="mane">
+            <h4>
+                Industrial STORE
+            </h4>
+        </div>
+        <div id="main">
+            <h2><button class="openbtn" onclick="openNav()">☰</h2></button>
+            <div id="mainer" class="mainer">
+                <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">×</a>
+                <div class="wrap cf">
+                    <h1 class="projTitle">Responsive Table</h1>
+                    <div class="heading cf">
+                        <a href="#" class="continue">Continue Shopping</a>
+                    </div>
+                    <div class="cart">
+
+                        <ul class="cartWrap">
+                            <li class="items odd">
+
+                                <div class="infoWrap">
+                                    <div class="cartSection">
+                                        <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt=""
+                                            class="itemImg" />
+                                        <p class="itemNumber">#QUE-007544-002</p>
+                                        <h3>Item Name 1</h3>
+                                        <p> <input type="text" class="qty" placeholder="3" /> x $5.00</p>
+                                        <p class="stockStatus"> In Stock</p>
+                                    </div>
+                                    <div class="prodTotal cartSection">
+                                        <p>$15.00</p>
+                                    </div>
+                                    <div class="cartSection removeWrap">
+                                        <a href="#" class="remove">x</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="items even">
+
+                                <div class="infoWrap">
+                                    <div class="cartSection">
+                                        <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt=""
+                                            class="itemImg" />
+                                        <p class="itemNumber">#QUE-007544-002</p>
+                                        <h3>Item Name 1</h3>
+                                        <p> <input type="text" class="qty" placeholder="3" /> x $5.00</p>
+                                        <p class="stockStatus"> In Stock</p>
+                                    </div>
+                                    <div class="prodTotal cartSection">
+                                        <p>$15.00</p>
+                                    </div>
+                                    <div class="cartSection removeWrap">
+                                        <a href="#" class="remove">x</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="items odd">
+                                <div class="infoWrap">
+                                    <div class="cartSection">
+
+                                        <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt=""
+                                            class="itemImg" />
+                                        <p class="itemNumber">#QUE-007544-002</p>
+                                        <h3>Item Name 1</h3>
+
+                                        <p> <input type="text" class="qty" placeholder="3" /> x $5.00</p>
+
+                                        <p class="stockStatus out"> Out of Stock</p>
+                                    </div>
+
+
+                                    <div class="prodTotal cartSection">
+                                        <p>$15.00</p>
+                                    </div>
+                                    <div class="cartSection removeWrap">
+                                        <a href="#" class="remove">x</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="items even">
+                                <div class="infoWrap">
+                                    <div class="cartSection info">
+
+                                        <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt=""
+                                            class="itemImg" />
+                                        <p class="itemNumber">#QUE-007544-002</p>
+                                        <h3>Item Name 1</h3>
+
+                                        <p> <input type="text" class="qty" placeholder="3" /> x $5.00</p>
+
+                                        <p class="stockStatus"> In Stock</p>
+
+                                    </div>
+
+
+                                    <div class="prodTotal cartSection">
+                                        <p>$15.00</p>
+                                    </div>
+
+                                    <div class="cartSection removeWrap">
+                                        <a href="#" class="remove">x</a>
+                                    </div>
+                                </div>
+                                <div class="special">
+                                    <div class="specialContent">Free gift with purchase!, gift wrap, etc!!</div>
+                                </div>
+                            </li>
+
+
+                            <!--<li class="items even">Item 2</li>-->
+
+                        </ul>
+                    </div>
+
+                    <div class="promoCode"><label for="promo">Have A Promo Code?</label><input type="text" name="promo"
+                            placholder="Enter Code" />
+                        <a href="#" class="btn"></a></div>
+
+                    <div class="subtotal cf">
+                        <ul>
+                            <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span>
+                            </li>
+
+                            <li class="totalRow"><span class="label">Shipping</span><span class="value">$5.00</span>
+                            </li>
+
+                            <li class="totalRow"><span class="label">Tax</span><span class="value">$4.00</span></li>
+                            <li class="totalRow final"><span class="label">Total</span><span class="value">$44.00</span>
+                            </li>
+                            <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <button class="openbtn2" onclick="openNav2()">
+                <i class="fa fa-shopping-basket" style="font-size:18px"></i> </button>
+        </div>
+
+        </div>
+        </div>
+    </nav>
+
+
+
+    <source src="http://frolovoleg.ru/videos/abstract_bg.mp4" type="video/mp4">
+    </video>
+
+    <div id="rap">
+        <img src="https://lh3.googleusercontent.com/ztZMtjMnBNFUlySKYQMTnFrpDwbZ65TldNACq5ZbpTd-Zm-DGWWV7rsYygjL9a9aimIXG1Z95NoDHunvgc4ivqygVJGjj-TsKJM4_DtW_-UmEtjdvOQ05Iv8W-3hq0v6heKIORfweQ"
+            width="600" height="315" />
+        <div class="timer" class="logos">
+            <div class="days">
+                <div id="days">04</div>
+                <div class="label">Days</div>
+            </div>
+            <div class="separator">
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="hours">
+                <div id="hours">21</div>
+                <div class="label">Hours</div>
+            </div>
+            <div class="separator">
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="minutes">
+                <div id="minutes">45</div>
+                <div class="label">Minutes</div>
+            </div>
+            <div class="separator">
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="seconds">
+                <div id="seconds">13</div>
+                <div class="label">Seconds</div>
+            </div>
+        </div>
+        <br>
+        <br>
+
+
+
+
+
+
+        <br>
+
+        <br>
+
+    </div>
+    </div>
+
+
+    <a href="#rapper">click me</a>
+    <!-- The social media icon bar -->
+    <div class="icon-bar2">
+        <a href="#" class="Facebook"><i class="fa fa-facebook" style="font-size:2vw;" black></i></a>
+        <a href="#" class="Twitter"><i class="fa fa-twitter" style="font-size:2vw;"></i></a>
+        <a href="#" class="Google"><i class="fa fa-google" style="font-size:2vw;"></i></a>
+        <a href="#" class="linkedin"><i class="fa fa-linkedin" style="font-size:2vw;"></i></a>
+        <a href="#" class="youtube"><i class="fa fa-youtube" style="font-size:2vw;"></i></a>
+    </div>
+
+
+    <div class="contend">
+        </nav>
+
+        <br>
+        <div class="1"></div>
+
+        <div class="bg-image"></div>
+
+        <div id="wrap">
+            <div class="title">
+                <h1 style="font-size:8vw;">CodePen</h1>
+            </div>
+            <main>
+                <div class="container">
+                    <!-- Full-width images with number text -->
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 6</div>
+                        <img class="responsive"
+                            src="https://lh3.googleusercontent.com/dihnHCsSGulghb3KkVzEy1OihDDOc-l_pRd8szY1yMovezXNAxJahAnbyhxrGVB8wtZGmHxJ_jjvPjEtGMKP7q-RYEY5MRPHcr_Nol5Bv2vXp2f3F-DWdnW-ZH-WA2pP7iAUhP7sXQ" />
+                        <div class="caption-container">
+                            <p id="caption">Pottery Barn</p>
+                        </div>
+                    </div>
+                    <div id="rapper">
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 6</div>
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/Pw5dEMCooV4v1QF_IALPEKUAK9-Ft4hNr2Ozurwf7NDAS6fFI5mAPyBXqHRjZMORlfShi1_AS06-PbuAA2KtcQG1hQN3PdIf8ce8E4TcYjwXazLg_cOec_7ZpksQYcWwNmHjfYBkjw">
+                            <div class="caption-container">
+                                <p id="caption">Pottery Barn</p>
+                            </div>
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 6</div>
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/nOWU1lcM8llahWivU9dOkQzYFiCQ3ycyNE6-RV_JsiIuwXKkwbomCLD537cq56YUlDO7FkIDbNuVuCgA4WomQRjEayH6auNgu42CWGLRxEkZyyJIK_wRbcshDzOCpJ0uL4EdOLrTKQ">
+                            <div class="caption-container">
+                                <p id="caption">American Furniture</p>
+                            </div>
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 6</div>
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/YA-RCCVzkeVrCD7vUQ68kPkZxgnt4vJ9f43ThseQJfZvALA_pmpCMo78gcRDal-bnMIxvvfl0_qKRGwFcPEbVMfd9VECk3gQuRYldh_Z6D34ahdUA4ZAP0d-X8QvOaNPmullWns5yQ">
+                            <div class="caption-container">
+                                <p id="caption">Ashleys</p>
+                            </div>
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">5 / 6</div>
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/De5dl_pZ8gcm8UpbT10P8yJqprtWzsJsKXDlsmnDCnENsWtYhAS_Dwh07BzH49UpQeif7ijW1XoV8vby2CwMrRzZIUMXRKGuFw2bizSdl7QfFHmELkIA_qL1Qq1T6wJFWIaiRf-vEQ">
+                            <div class="caption-container">
+                                <p id="caption">Kartell</p>
+                            </div>
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">6 / 6</div>
+                            <img class="responsive"
+                                src="https://lh3.googleusercontent.com/4_ndCgFBy5pWsp3WnifsX5H26N7pigVGHAOCLHDgb9T26BTnQFsecONsdmlpteLS48ZB5ItHIsGRNCmeotJIqXTJ1yw267WKMHhuIgMRyCLbOuraJ_dgzOWhEO8jqqZ5YX5MmFC_XQ">
+                            <div class="caption-container">
+                                <p id="caption">Williams Sonoma</p>
+                            </div>
+                        </div>
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        <!-- Image text -->
+                        <!-- Thumbnail images -->
+                        <div class="row">
+                            <div class="column">
+                                <img class="res"
+                                    src="https://lh3.googleusercontent.com/qSA4WzWcrCAg3nHF5IVrG-dNWiyR_mmKyE-CnJ_Jha26Z3j_e3an-2GCVTe8L6Sbcu-hZy7VpzOBXVzl4pZGBv9MeNf4ZMAQfIkygxr-XCOiZsS4v8DvbHkDyExSvkENeC3VSS4o6Q"
+                                    style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                            </div>
+                            <div class="column">
+                                <img class="res"
+                                    src="https://lh3.googleusercontent.com/Pw5dEMCooV4v1QF_IALPEKUAK9-Ft4hNr2Ozurwf7NDAS6fFI5mAPyBXqHRjZMORlfShi1_AS06-PbuAA2KtcQG1hQN3PdIf8ce8E4TcYjwXazLg_cOec_7ZpksQYcWwNmHjfYBkjw"
+                                    style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                            </div>
+                            <div class="column">
+                                <img class="res"
+                                    src="https://lh3.googleusercontent.com/nOWU1lcM8llahWivU9dOkQzYFiCQ3ycyNE6-RV_JsiIuwXKkwbomCLD537cq56YUlDO7FkIDbNuVuCgA4WomQRjEayH6auNgu42CWGLRxEkZyyJIK_wRbcshDzOCpJ0uL4EdOLrTKQ"
+                                    style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                            </div>
+                            <div class="column">
+                                <img src="https://lh3.googleusercontent.com/YA-RCCVzkeVrCD7vUQ68kPkZxgnt4vJ9f43ThseQJfZvALA_pmpCMo78gcRDal-bnMIxvvfl0_qKRGwFcPEbVMfd9VECk3gQuRYldh_Z6D34ahdUA4ZAP0d-X8QvOaNPmullWns5yQ"
+                                    style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                            </div>
+                            <div class="column">
+                                <img class="res"
+                                    src="https://lh3.googleusercontent.com/De5dl_pZ8gcm8UpbT10P8yJqprtWzsJsKXDlsmnDCnENsWtYhAS_Dwh07BzH49UpQeif7ijW1XoV8vby2CwMrRzZIUMXRKGuFw2bizSdl7QfFHmELkIA_qL1Qq1T6wJFWIaiRf-vEQ"
+                                    style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                            </div>
+                            <div class="column">
+                                <img class="res"
+                                    src="https://lh3.googleusercontent.com/4_ndCgFBy5pWsp3WnifsX5H26N7pigVGHAOCLHDgb9T26BTnQFsecONsdmlpteLS48ZB5ItHIsGRNCmeotJIqXTJ1yw267WKMHhuIgMRyCLbOuraJ_dgzOWhEO8jqqZ5YX5MmFC_XQ"
+                                    style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+            </main>
+        </div>
+        <div class="title">
+            <h3 style="font-size:3vw;">Furniture</h1>
+        </div>
+        <div class="card">
+            <h3 style="font-size:3vw;">
+                <img class="responce"
+                    src="https://lh3.googleusercontent.com/zQU06ZoFCTO3k7nA15j6_HMnWesUlleT7l0PnqJdGHIFzuV0YVKTlINHYXbi0J6D1oa54d-ALatEwkoMO-aFFr1CJYclhtLimGRBya84GPm0rVsI4fRUqN5g_vhdWr9diwIXzGQUNQ"
+                    class="re">
+                Modern table</h3>
+            <p style="font-size:2vw;" class="price">$89.99</p>
+            <p style="font-size:2vw;">Some text about the jeans..</p>
+            <p style="font-size:2vw;"><button><i class="fa fa-shopping-cart" style="font-size:28px"></i></button></p>
+            <p style="font-size:2vw;"><button><i class="fa fa-heart" style="font-size:28px">
+                    </i></button></p>
+        </div>
+        <br>
+        <div class="card">
+            <h3 style="font-size:3vw;">
+                <img class="responce"
+                    src="https://lh3.googleusercontent.com/Mu9IKY1ct0h7hzSec7r2TpoNDrA3UGQs6iSI2ARqKJ8jyGSU5zD4O4syO-_mozhpyf0tcDCDAYbvlwui7Xlf_KyA0EoK8eXoFoQO9VoZkW0UZMcdnvD2AM2ysYi4TM6bu8pVlhhaTg"
+                    class="re">
+                Modern table</h3>
+            <p style="font-size:2vw;" class="price">$68.99</p>
+            <p style="font-size:2vw;">Some text about the jeans..</p>
+
+            <p style="font-size:2vw;"><button><i class="fa fa-shopping-cart" style="font-size:28px"></i></button></p>
+            <p style="font-size:2vw;"><button><i class="fa fa-heart" style="font-size:28px">
+                    </i></button></p>
+        </div>
+        <br>
+        <div class="card">
+            <h3 style="font-size:3vw;">
+                <img class="responce"
+                    src="https://lh3.googleusercontent.com/w_VXr7FrnS3t8aG0Tvvg7ZZ1mSZVbnvCMx6wTucj057ZhpE3h4adgLkz7GqMZ1inQm2UaiIX_GoEFfnIgz28KjhoT42tFyEW2kA1hW7FbyuVmj1RXA4OGbpmdjfSNpvN2xsKDB70Ug"
+                    class="re">
+                Modern table</h3>
+            <p class="price">$80.99</p>
+            <p style="font-size:2vw;">Some text about the jeans..</p>
+            <p style="font-size:2vw;"><button><i class="fa fa-shopping-cart" style="font-size:28px"></i></button></p>
+            <p style="font-size:2vw;"><button><i class="fa fa-heart" style="font-size:28px">
+                    </i></button></p>
+        </div><br>
+        <div class="card">
+            <h3 style="font-size:3vw;">
+
+                <img class="responce"
+                    src="https://lh3.googleusercontent.com/AQLAI4QwoIXi2vYk9PqexcouITPWEMfO-sHoDM6z6Ie_NqGh2uHyP8z5WuyFdgGq_Nc35ZlzLJUnsp_Fz1U0ooCdelgoKd6GxStFa0SvNwnZbv-5xWhJoV0q-yQ2lBU3t0Ke-r8BnA"
+                    class="re">
+                Modern table</h3>
+            <p style="font-size:2vw;" class="price">$68.99</p>
+            <p style="font-size:2vw;">Some text about the jeans..</p>
+            <p style="font-size:2vw;"><button><i class="fa fa-shopping-cart" style="font-size:28px"></i></button></p>
+            <p style="font-size:2vw;"><button><i class="fa fa-heart" style="font-size:28px">
+                    </i></button></p>
+        </div>
+        <br>
+        <div class="card">
+            <h3 style="font-size:3vw;">
+
+                <img class="responce"
+                    src="https://lh3.googleusercontent.com/LZn-kO618FqWiNPbYhd0XtQXlqmk_bF8dTHLzZ58oWeYsDbC6uG7bfDZ4xqotujBnuR0KG2O8l2bTgsXEbPvvhw7WymyAGAPmpUNeFsaPYUIAPVRv-xLJBqXx5LnjeEQ-wJ_J0pIhA"
+                    class="re">
+                Modern chair</h3>
+            <p style="font-size:2vw;" class="price">$59.99</p>
+            <p style="font-size:2vw;">Some text about the jeans..</p>
+            <p style="font-size:2vw;"><button><i class="fa fa-shopping-cart" style="font-size:28px"></i></button></p>
+            <p style="font-size:2vw;"><button><i class="fa fa-heart" style="font-size:28px">
+                    </i></button></p>
+        </div>
+        <br>
+
+        <div class="card">
+            <h3 style="font-size:3vw;">
+
+                <img class="responce"
+                    src="https://lh3.googleusercontent.com/VJUkhnml1uk_NX-yepBtJyPWX_LSiDvdSR4PI_j9wo23E_XSg8UEtFGk5xEMkWCMbYKfmVy_MdcSPSbBkpWF-DwHzx9UOWBkQmfHSX51ddNzi5FB2gq7xOk5HKVGFetUZ_jb5YnK4A">
+                Modern chair</h3>
+            <p style="font-size:2vw;" class="price">$49.99</p>
+            <p style="font-size:2vw;">Some text about the jeans..</p>
+            <p style="font-size:2vw;"><button><i class="fa fa-shopping-cart" style="font-size:28px"></i></button></p>
+            <p style="font-size:2vw;"><button><i class="fa fa-heart" style="font-size:28px">
+                    </i></button></p>
+        </div>
+        <br>
+        <div class="card">
+            <h3 style="font-size:3vw;">
+
+                <img class="responce"
+                    src="https://lh3.googleusercontent.com/trPSehBj-Bn-l1NYqgWADHLFvHTpAuPQrb7Y807XL0Fs8UUk5TWCLVudSgDP__hSwwsyYpRdlbAaUj-pj62Ug_Lq4erPoBLvCRl5PyFOkRJXF4sxRgVZ3T_lrkAJUnxqkfnxpg9jYQ">
+                Modern chair</h3>
+            <p style="font-size:2vw;" class="price">$49.99</p>
+            <p style="font-size:2vw;">Some text about the jeans..</p>
+            <p style="font-size:2vw;"><button><i class="fa fa-shopping-cart" style="font-size:28px"></i></button></p>
+            <p style="font-size:2vw;"><button><i class="fa fa-heart" style="font-size:28px">
+                    </i></button></p>
+        </div>
+        <br>
+        <div class="card">
+            <h3>
+                <img class="responce"
+                    src="https://lh3.googleusercontent.com/_4T_zgDcUdWsJSwQvPeXYxRzGKz5rBZzDwPV3jJynK5ePd-AVNAacFmy08nJzr2E2arnnLD8tl7WyIc-_ESmHhS_sDrSProhyjmg4SfABKJoR3kDNkE3BRdL6VT4W4A905ZZ-5gz8Q">
+                Modern Chair</h3>
+            <p style="font-size:2vw;" class="price">$59.99</p>
+            <p style="font-size:2vw;">Some text about the jeans..</p>
+            <p style="font-size:2vw;"><button><i class="fa fa-shopping-cart" style="font-size:28px"></i></button></p>
+            <p style="font-size:2vw;"><button><i class="fa fa-heart" style="font-size:28px">
+                    </i></button></p>
+        </div>
+        <br>
+        <div class="card">
+            <h3>
+
+                <img class="responce"
+                    src="https://lh3.googleusercontent.com/R-OXE0xsUEtbfWQbOPJvbYxIot22uGh3eMBFjqXzTJnQZ46BtW8LL70jV1aJ1AZGPz_wiUXva_mBvF_IbTMxA86cCj-fUmE7kV0vrusqpcTNJMhT6n0enjKxi5u1riuc9UURrZucVA">
+                Modern Chair</h3>
+            <p style="font-size:2vw;" class="price">$79.99</p>
+            <p style="font-size:2vw;">Some text about the jeans..</p>
+            <p style="font-size:2vw;"><button><i class="fa fa-shopping-cart" style="font-size:28px"></i></button></p>
+            <p style="font-size:2vw;"><button><i class="fa fa-heart" style="font-size:28px">
+                    </i></button></p>
+        </div>
+        <section>
+            <iframe width="90%" height="65%" src="https://www.youtube.com/embed/OjVxg-WrKSY" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </section>
+        <div class="title">
+            <h1 style="font-size:5vw;">Masonry Gallery</h1>
+        </div>
+        <div class="gallery" id="gallery">
+            <div class="gallery-item">
+                <div class="content">
+
+                    <img
+                        src="https://lh3.googleusercontent.com/yob9nZvceH4EuVZ3DzWGr0SREu5erakCssaycmJsIMbHYVRR-DkHW6SoOvzpCj9ZOXfXefsgB-YLliIquITj6zzgZfhtRaJL0IAxtWF6BuqdAcDmc5Q-Z4tsBLXQbjw0l_PDo0xOAQ" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="content">
+                    <img
+                        src="https://lh3.googleusercontent.com/8CJ0o2QFQ7eE4c77tICi4hRjlHjyBwqFSlxM41inG5VMg5oLDAqt6WH8H97d8FT5a2UCkqwhAxSR5rWypc-e6Uh-mA43TW88m906cNUfNPILKClX9TTSvvUyGGq8Y5GyhGZGVGfQQA" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://lh3.googleusercontent.com/yob9nZvceH4EuVZ3DzWGr0SREu5erakCssaycmJsIMbHYVRR-DkHW6SoOvzpCj9ZOXfXefsgB-YLliIquITj6zzgZfhtRaJL0IAxtWF6BuqdAcDmc5Q-Z4tsBLXQbjw0l_PDo0xOAQ" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://lh3.googleusercontent.com/8CJ0o2QFQ7eE4c77tICi4hRjlHjyBwqFSlxM41inG5VMg5oLDAqt6WH8H97d8FT5a2UCkqwhAxSR5rWypc-e6Uh-mA43TW88m906cNUfNPILKClX9TTSvvUyGGq8Y5GyhGZGVGfQQA" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://lh3.googleusercontent.com/gCrtSkac40vPhK6YBd1iIT2aZp6xj9W9_eDlprs4xsjQOZNICX8ZyRtYcua7jtSRnqyruENjojJqR7VwI9ffv2iRkwDcSdI60-yYaf-LJfNpjQ17D7wUVuQf26OzIH9cpfW06sGj4g" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://lh3.googleusercontent.com/yob9nZvceH4EuVZ3DzWGr0SREu5erakCssaycmJsIMbHYVRR-DkHW6SoOvzpCj9ZOXfXefsgB-YLliIquITj6zzgZfhtRaJL0IAxtWF6BuqdAcDmc5Q-Z4tsBLXQbjw0l_PDo0xOAQ" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://lh3.googleusercontent.com/gCrtSkac40vPhK6YBd1iIT2aZp6xj9W9_eDlprs4xsjQOZNICX8ZyRtYcua7jtSRnqyruENjojJqR7VwI9ffv2iRkwDcSdI60-yYaf-LJfNpjQ17D7wUVuQf26OzIH9cpfW06sGj4g" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://lh3.googleusercontent.com/8CJ0o2QFQ7eE4c77tICi4hRjlHjyBwqFSlxM41inG5VMg5oLDAqt6WH8H97d8FT5a2UCkqwhAxSR5rWypc-e6Uh-mA43TW88m906cNUfNPILKClX9TTSvvUyGGq8Y5GyhGZGVGfQQA"
+                        width="600" height="315" /></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://lh3.googleusercontent.com/gCrtSkac40vPhK6YBd1iIT2aZp6xj9W9_eDlprs4xsjQOZNICX8ZyRtYcua7jtSRnqyruENjojJqR7VwI9ffv2iRkwDcSdI60-yYaf-LJfNpjQ17D7wUVuQf26OzIH9cpfW06sGj4g" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://lh3.googleusercontent.com/gCrtSkac40vPhK6YBd1iIT2aZp6xj9W9_eDlprs4xsjQOZNICX8ZyRtYcua7jtSRnqyruENjojJqR7VwI9ffv2iRkwDcSdI60-yYaf-LJfNpjQ17D7wUVuQf26OzIH9cpfW06sGj4g" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://lh3.googleusercontent.com/gCrtSkac40vPhK6YBd1iIT2aZp6xj9W9_eDlprs4xsjQOZNICX8ZyRtYcua7jtSRnqyruENjojJqR7VwI9ffv2iRkwDcSdI60-yYaf-LJfNpjQ17D7wUVuQf26OzIH9cpfW06sGj4g" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://lh3.googleusercontent.com/gCrtSkac40vPhK6YBd1iIT2aZp6xj9W9_eDlprs4xsjQOZNICX8ZyRtYcua7jtSRnqyruENjojJqR7VwI9ffv2iRkwDcSdI60-yYaf-LJfNpjQ17D7wUVuQf26OzIH9cpfW06sGj4g" />
+                </div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img
+                        src="https://lh3.googleusercontent.com/gCrtSkac40vPhK6YBd1iIT2aZp6xj9W9_eDlprs4xsjQOZNICX8ZyRtYcua7jtSRnqyruENjojJqR7VwI9ffv2iRkwDcSdI60-yYaf-LJfNpjQ17D7wUVuQf26OzIH9cpfW06sGj4g" />
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="chair2.jpg" class="res" alt=""></div>
+            </div>
+            <div class="gallery-item">
+                <div class="content"><img src="chair3.jpg" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+        <img class="img2"
+            src="https://lh3.googleusercontent.com/S9sS6rivGLTSvQVYHZk50rCTrwsvNz-b4Isch2N8pwl7RClD-XqnXuzStZ73w6fj8miSrxbaYSDWJtXsZIk9PEHtUALAe-vevM-QGUnmo8nPX2SB-lE6NDEgVFGdR4ngV5rHCJmG1g">
+        <p style="font-size:2vw;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et
+            dictum interdum...</p>
+        <p style="font-size:2vw;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et
+            dictum interdum...</p>
+    </div>
+
+    <div class="clearfix">
+        <img class="img2"
+            src="https://lh3.googleusercontent.com/d-_5IRisVFQZlLEc4V7xWg-ArS2UP_6ceRFuwkW_C8O3OFwQcJEZO986udPY2Dey9Epw1gewhVNrA677B2BFOwxJdDSoTbQaWcAnZPQT5ZUXdfL71xXweBFcT_UhKAvxYrKRD2C_LQ" />
+        <p style="font-size:2vw;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et
+            dictum interdum...</p>
+        <p style="font-size:2vw;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et
+            dictum interdum...</p>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <section>
+
+        <div class="carousel">
+            <div id="theme" class="pantone">
+                <h1>
+                    <span class="seg title1" id="title1"><span class="fg">Help Stop:</span><span
+                            class="bg"></span></span>
+                    <span class="seg title2" id="title2"><span class="fg">COVID-19</span><span class="bg"></span></span>
+                </h1>
+                <h2 class="subtitle" id="subtitle">Close your eyes and picture this: Pademia 187. <a
+                        href="http://www.mcsweeneys.net/articles/the-worlds-first-and-only-completely-honest-resume-of-a-graphic-designer">wash
+                        your hands why you wearing a mask? it won't save you</a> wash again. Now quarantine 420. keep
+                    waking Much more “ty” correct?</h2>
+            </div>
+        </div>
+        <div class="map">
+            <div class="mapouter">
+                <div class="gmap_canvas"><iframe width="100%" height="25%" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=EL%2Monte%20la%20california&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
+                </div>
+            </DIV>
+        </div>
+        <footer>
+
+            <div class="scrollmenu2">
+                <a href="#chart.html">
+                    <p style="font-size:3vw;">help</p>
+                </a>
+                <a href="#chart.html">
+                    <p style="font-size:3vw;">about</p>
+                </a>
+                <a href="gallery.html">
+                    <p style="font-size:3vw;">contact</p>
+                </a></a>
+                <a href="#contact">
+                    <p style="font-size:3vw;">terms</p>
+                </a>
+                <a href="#about">
+                    <p style="font-size:3vw;">disclaimer</p>
+                </a>
+
+            </div>
+
+            </div>
+            <br>
+            <address>
+                Created by <a href="mailto: fernand0e88capitalv@gmail.com">Fernando Vergara</a>.<br>
+                Visit me on:<a href="https://m.facebook.com/fdoe88"><span class="d">Facebook</span></a>
+
+            </address>
+
+        </footer>
+        <script>
+            var WINDOW_HEIGHT = $(window).height(),
+                WINDOW_TOP = $(window).scrollTop(),
+                $animates = $('.js-animates'),
+                clouds = [],
+                elements = [],
+                instance = this,
+                TREES = [
+                    [100, 100],
+                    [130, 130],
+                    [300, 200],
+                    [700, 100],
+                    [800, 150],
+                    [800, 450],
+                    [550, 850],
+                    [330, 1000],
+                    [300, 1050],
+                    [100, 1250],
+                    [200, 1400],
+                    [230, 1430],
+                    [180, 1450],
+                    [880, 1500],
+                    [680, 1600],
+                    [500, 1850],
+                    [300, 1900],
+                    [100, 2000],
+                    [130, 2030],
+                    [350, 2300],
+                    [850, 2500],
+                    [880, 2520],
+                    [840, 2530],
+                    [800, 2600],
+                    [700, 2800],
+                    [730, 2830],
+                    [330, 2900],
+                    [130, 3000],
+                    [330, 3220],
+                    [530, 3300],
+                    [670, 3400],
+                    [970, 3480],
+                    [800, 3700],
+                    [600, 3800],
+                    [570, 3840],
+                    [80, 3840],
+                    [150, 3970],
+                    [100, 4000],
+                    [150, 4200]
+                ],
+                BUSHES = [
+                    [60, 100],
+                    [300, 100],
+                    [320, 150],
+                    [650, 500],
+                    [600, 530],
+                    [850, 850],
+                    [800, 880],
+                    [340, 1200],
+                    [360, 1250],
+                    [300, 1250],
+                    [400, 1400],
+                    [430, 1430],
+                    [480, 1450],
+                    [680, 1500],
+                    [650, 1580],
+                    [800, 1850],
+                    [770, 1900],
+                    [100, 2400],
+                    [130, 2430],
+                    [350, 2400],
+                    [550, 2500],
+                    [680, 2520],
+                    [640, 2530],
+                    [900, 2700],
+                    [500, 2800],
+                    [430, 2830],
+                    [130, 2900],
+                    [140, 2930],
+                    [30, 3220],
+                    [50, 3300],
+                    [770, 3400],
+                    [800, 3450],
+                    [600, 3700],
+                    [400, 3800],
+                    [370, 3900],
+                    [30, 3840],
+                    [150, 4170],
+                    [100, 4150],
+                    [350, 4200]
+                ],
+                HILLS = [
+                    [100, 200],
+                    [400, 200],
+                    [850, 100],
+                    [250, 500],
+                    [200, 470],
+                    [400, 420]
+                ],
+                CLOUDS = [
+                    450,
+                    470,
+                    900,
+                    950,
+                    1500,
+                    1900,
+                    2400,
+                    2800,
+                    3300,
+                    3800,
+                    3850
+                ];
+
+            $('body').addClass('js-inview');
+
+            instance.canvas = document.createElement('canvas');
+            instance.canvas.id = "bg-canvas";
+
+            $('body').prepend($(instance.canvas));
+            instance.canvas.width = window.innerWidth;
+            instance.canvas.height = window.innerHeight;
+
+            this.ctx = this.canvas.getContext('2d');
+
+            var ANIMATING = true;
+
+            var texture = new Image();
+            texture.src = 'http://www.radiolights.com/TEST/old/google2/assets/images/png/spritesheet.png';
+            texture.addEventListener('load', handle_texture_LOAD);
+
+            function render() {
+                var scrollPosition,
+                    element,
+                    cloud,
+                    i;
+
+                scrollPosition = WINDOW_TOP < 0 ? scrollPosition = 0 : scrollPosition = -WINDOW_TOP;
+
+                console.log(scrollPosition);
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                this.ctx.save();
+                this.ctx.translate(0, scrollPosition);
+
+                for (i = 0; i < elements.length; i += 1) {
+                    element = elements[i];
+                    element.render();
+                }
+                this.ctx.restore();
+                this.ctx.save();
+                this.ctx.translate(0, scrollPosition * 0.8);
+
+                for (i = 0; i < clouds.length; i += 1) {
+                    cloud = clouds[i];
+                    cloud.render();
+                    if (ANIMATING !== false) {
+                        cloud.x = cloud.x < window.innerWidth ? cloud.x + 1 : -100;
+                    }
+                }
+
+                this.ctx.restore();
+
+                if (ANIMATING !== false) {
+                    requestAnimationFrame(this.render.bind(this));
+                }
+            };
+
+            function handle_texture_LOAD() {
+                addContent();
+                render();
+            }
+
+            function inviewAnimations() {
+                var i;
+
+                if (WINDOW_TOP < 0) {
+                    return;
+                }
+
+                $animates.each(function () {
+                    var $this = $(this),
+                        elTop = $this.offset().top,
+                        elHeight = $this.height();
+
+                    if (elTop - WINDOW_TOP < WINDOW_HEIGHT && elTop - WINDOW_TOP + elHeight > 0) {
+                        $this.addClass('in');
+                    } else {
+                        $this.removeClass('in');
+                    }
+                });
+            }
+
+            var CloudSprite = function (options) {
+                this.image = options.image;
+                this.ctx = options.ctx;
+                this.x = options.x;
+                this.y = options.y;
+                this.tex = {
+                    x: 136,
+                    y: 0,
+                    w: 96,
+                    h: 67
+                };
+                this.render = function () {
+                    this.ctx.drawImage(this.image, this.tex.x, this.tex.y, this.tex.w, this.tex.h, this.x, this
+                        .y, this.tex.w, this.tex.h);
+                }
+            }
+
+            var TreeSprite = function (options) {
+                this.image = options.image;
+                this.ctx = options.ctx;
+                this.x = options.x;
+                this.y = options.y;
+                this.tex = {
+                    x: 0,
+                    y: 0,
+                    w: 72,
+                    h: 108
+                };
+                this.render = function () {
+                    this.ctx.drawImage(this.image, this.tex.x, this.tex.y, this.tex.w, this.tex.h, this.x, this
+                        .y, this.tex.w, this.tex.h);
+                }
+            }
+
+            var BushSprite = function (options) {
+                this.image = options.image;
+                this.ctx = options.ctx;
+                this.x = options.x;
+                this.y = options.y;
+                this.tex = {
+                    x: 73,
+                    y: 0,
+                    w: 35,
+                    h: 30
+                };
+                this.render = function () {
+                    this.ctx.drawImage(this.image, this.tex.x, this.tex.y, this.tex.w, this.tex.h, this.x, this
+                        .y, this.tex.w, this.tex.h);
+                }
+            }
+
+            var HillSprite = function (options) {
+                this.image = options.image;
+                this.ctx = options.ctx;
+                this.x = options.x;
+                this.y = options.y;
+                this.tex = {
+                    x: 73,
+                    y: 40,
+                    w: 65,
+                    h: 65
+                };
+                this.render = function () {
+                    this.ctx.drawImage(this.image, this.tex.x, this.tex.y, this.tex.w, this.tex.h, this.x, this
+                        .y, this.tex.w, this.tex.h);
+                }
+            }
+
+            function addContent() {
+                var i,
+                    tree,
+                    bush,
+                    hill,
+                    cloud;
+
+                for (i = 0; i < CLOUDS.length; i += 1) {
+                    cloud = new CloudSprite({
+                        x: Math.random() * window.innerWidth,
+                        y: CLOUDS[i],
+                        ctx: this.ctx,
+                        image: texture
+                    });
+                    clouds.push(cloud);
+                }
+
+                for (i = 0; i < TREES.length; i += 1) {
+                    tree = new TreeSprite({
+                        x: TREES[i][0],
+                        y: TREES[i][1],
+                        ctx: this.ctx,
+                        image: texture
+                    });
+                    elements.push(tree);
+                }
+
+                for (i = 0; i < BUSHES.length; i += 1) {
+                    bush = new BushSprite({
+                        x: BUSHES[i][0],
+                        y: BUSHES[i][1],
+                        ctx: this.ctx,
+                        image: texture
+                    });
+                    elements.push(bush);
+                }
+
+                for (i = 0; i < HILLS.length; i += 1) {
+                    hill = new HillSprite({
+                        x: HILLS[i][0],
+                        y: HILLS[i][1],
+                        ctx: this.ctx,
+                        image: texture
+                    });
+                    elements.push(hill);
+                }
+            }
+
+            function handle_SCROLL() {
+                WINDOW_TOP = $(window).scrollTop();
+                TIMEOUT = setTimeout(function () {
+                    inviewAnimations();
+                }, 100);
+            }
+
+            function handle_RESIZE() {
+                instance.canvas.width = window.innerWidth;
+                instance.canvas.height = window.innerHeight;
+                WINDOW_HEIGHT = $(window).height();
+            }
+
+            window.addEventListener('scroll', handle_SCROLL);
+            window.addEventListener('resize', handle_RESIZE);
+        </script>
+        <script>
+            function openNav() {
+                document.getElementById("mySidebar").style.width = "50%";
+                document.getElementById("main").style.marginLeft = "0";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+            }
+        </script>
+
+        <script>
+            function openNav2() {
+                document.getElementById("mainer").style.width = "50%";
+            }
+
+            /* Set the width of the sidebar to 0 (hide it) */
+            function closeNav2() {
+                document.getElementById("mainer").style.width = "0";
+            }
+        </script>
+        <script>
+            // Get elements
+            let daysEl = document.getElementById("days")
+            let hoursEl = document.getElementById("hours")
+            let minutesEl = document.getElementById("minutes")
+            let secondsEl = document.getElementById("seconds")
+
+            // Final date
+            let countDownDate = new Date("Jan 1, 2022 00:00:00").getTime();
+
+            // Timer
+            let timer = setInterval(function () {
+
+                let currentDate = new Date().getTime();
+                let distance = countDownDate - currentDate;
+
+                // Time calculations for days, hours, minutes and seconds
+                let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Fix for 0
+                days = days < 10 ? "0" + days : days
+                hours = hours < 10 ? "0" + hours : hours
+                minutes = minutes < 10 ? "0" + minutes : minutes
+                seconds = seconds < 10 ? "0" + seconds : seconds
+
+                // Output calculations
+                daysEl.innerHTML = days
+                hoursEl.innerHTML = hours
+                minutesEl.innerHTML = minutes
+                secondsEl.innerHTML = seconds
+
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(timer)
+                    alert("Here we are")
+                }
+            }, 1000)
+        </script>
+        <script type="text/javascript" src="https://use.typekit.com/xfq8rit.js"></script>
+        <script type="text/javascript">
+            try {
+                Typekit.load();
+            } catch (e) {}
+        </script>
+    </section>
+
+    <script>
+        const gradient = document.querySelector(".gradient");
+
+        function onMouseMove(event) {
+            gradient.style.backgroundImage = 'radial-gradient(at ' + event.clientX + 'px ' + event.clientY +
+                'px, rgba(45, 42, 42, 0.35) 0%, rgb(0, 0, 0) 70%)';
+        }
+        document.addEventListener("mousemove", onMouseMove);
+    </script>
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        var header = document.getElementById("navbar");
+        var sticky = header.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+    <script>
+        var headers = ["H1", "H2", "H3", "H4", "H5", "H6"];
+
+        $(".accordion").click(function (e) {
+            var target = e.target,
+                name = target.nodeName.toUpperCase();
+
+            if ($.inArray(name, headers) > -1) {
+                var subItem = $(target).next();
+
+                //slideUp all elements (except target) at current depth or greater
+                var depth = $(subItem).parents().length;
+                var allAtDepth = $(".accordion p, .accordion div").filter(function () {
+                    if ($(this).parents().length >= depth && this !== subItem.get(0)) {
+                        return true;
+                    }
+                });
+                $(allAtDepth).slideUp("fast");
+
+                //slideToggle target content and adjust bottom border if necessary
+                subItem.slideToggle("fast", function () {
+                    $(".accordion :visible:last").css("border-radius", "0 0 10px 10px");
+                });
+                $(target).css({
+                    "border-bottom-right-radius": "0",
+                    "border-bottom-left-radius": "0"
+                });
+            }
+        });
+    </script>
+    <script>
+        y(document).ready(function () {
+            $(window).scroll(function (e) {
+                parallaxScroll();
+            });
+
+            function parallaxScroll() {
+                var scrolled = $(window).scrollTop();
+                $('#parallax-bg-1').css('top', (0 - (scrolled * .25)) + 'px');
+                $('#parallax-bg-2').css('top', (0 - (scrolled * .4)) + 'px');
+                $('#parallax-bg-3').css('top', (0 - (scrolled * .75)) + 'px');
+            }
+
+        });
+    </script>
+    <script>
+        // makes the parallax elements
+        function parallaxIt() {
+            // create variables
+            var $fwindow = $(window);
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            var $contents = [];
+            var $backgrounds = [];
+
+            // for each of content parallax element
+            $('[data-type="content"]').each(function (index, e) {
+                var $contentObj = $(this);
+
+                $contentObj.__speed = ($contentObj.data('speed') || 1);
+                $contentObj.__fgOffset = $contentObj.offset().top;
+                $contents.push($contentObj);
+            });
+
+            // for each of background parallax element
+            $('[data-type="background"]').each(function () {
+                var $backgroundObj = $(this);
+
+                $backgroundObj.__speed = ($backgroundObj.data('speed') || 1);
+                $backgroundObj.__fgOffset = $backgroundObj.offset().top;
+                $backgrounds.push($backgroundObj);
+            });
+
+            // update positions
+            $fwindow.on('scroll resize', function () {
+                        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                        $contents.forEach(function ($contentObj) {
+                            var yPos = $contentObj.__fgOffset - scrollTop / $contentObj.__speed;
+
+                            $contentObj.css('top', yPos);
+                        })
+
+                        $backgrounds.forEach(function ($backgroundObj) {
+                                    var yPos = -((scrollTop - $backgroundObj.__fgOffset) / $backgroundObj.__speed);
+    </script>
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("mySearch");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myMenu");
+            li = ul.getElementsByTagName("li");
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+    <script>
+        $(window).scroll(function () {
+            var navTop = $(window).scrollTop();
+            $('.model-0').css("top", navTop + 50);
+        });
+    </script>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            captionText.innerHTML = dots[slideIndex - 1].alt;
+        }
+    </script>
+    <script>
+        var gallery = document.querySelector('#gallery');
+        var getVal = function (elem, style) {
+            return parseInt(window.getComputedStyle(elem).getPropertyValue(style));
+        };
+        var getHeight = function (item) {
+            return item.querySelector('.content').getBoundingClientRect().height;
+        };
+        var resizeAll = function () {
+            var altura = getVal(gallery, 'grid-auto-rows');
+            var gap = getVal(gallery, 'grid-row-gap');
+            gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+                var el = item;
+                el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
+            });
+        };
+        gallery.querySelectorAll('img').forEach(function (item) {
+            item.classList.add('byebye');
+            if (item.complete) {
+                console.log(item.src);
+            } else {
+                item.addEventListener('load', function () {
+                    var altura = getVal(gallery, 'grid-auto-rows');
+                    var gap = getVal(gallery, 'grid-row-gap');
+                    var gitem = item.parentElement.parentElement;
+                    gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura +
+                        gap));
+                    item.classList.remove('byebye');
+                });
+            }
+        });
+        window.addEventListener('resize', resizeAll);
+        gallery.querySelectorAll('.gallery-item').forEach(function (item) {
+            item.addEventListener('click', function () {
+                item.classList.toggle('full');
+            });
+        });
+    </script>
+
+    </div>
+
+</body>
+
+</html>

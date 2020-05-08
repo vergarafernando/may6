@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Vergara2</title>
+	<script src="https://kit.fontawesome.com/4735da2b26.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/4735da2b26.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/4735da2b26.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Notable&display=swap" rel="stylesheet" />
+	<style>
+		body {
+			font-family: "Russo One", sans-serif;
+			background-color: dimgray;
+			text-align: center;
+			max-width: 1000px;
+			margin: 0 auto;
+			padding: 0 auto;
+		}
+
+		.card {
+			width: 100%;
+			height: auto;
+
+		}
+
+		div.b {
+			word-wrap: break-word;
+		}
+
+		h1 {
+			word-wrap: break-word;
+			margin-top: 2em;
+			font-family: "Notable", sans-serif;
+			line-height: 120px;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 80px;
+			font-weight: 900;
+			color: white;
+			background-image: url(https://previews.123rf.com/images/bowie15/bowie151108/bowie15110800052/10416606-colored-paint-coming-out-of-the-screen-of-a-laptop.jpg);
+			background-size: 100% 100%;
+			color: transparent;
+			-webkit-background-clip: text;
+		}
+
+		header {
+			background-image: url();
+			background-position: center;
+		}
+
+		.header p {
+			color: whitesmoke;
+		}
+
+		.header {
+			margin-top: 100px;
+			margin-bottom: 10px;
+			min-width: 100px;
+			height: 100px;
+
+			position: relative;
+		}
+
+		section {
+			position: relative;
+			margin-top: 20px;
+		}
+
+		.container {
+			display: inline-flex;
+			flex-wrap: nowrap;
+			text-align: center;
+			width: 400;
+			height: 25px;
+			background-color: black;
+			position: relative;
+			animation-name: example;
+			animation-duration: 3s;
+			animation-delay: 2s;
+			animation-fill-mode: both;
+		}
+
+		.container i {}
+
+		.container a {
+			text-decoration: none;
+			padding: 20px;
+			color: plum;
+			background-color: black;
+		}
+
+		.container a:hover {
+			color: white;
+		}
+
+		.parent {
+			display: block;
+			flex-wrap: wrap;
+		}
+
+		.text p {
+			color: white;
+			text-align: justify;
+		}
+
+		.tooltip {
+			position: relative;
+			display: inline-block;
+			border-bottom: 1px dotted black;
+		}
+
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			width: 120px;
+			background-color: #555;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 5px 0;
+			position: absolute;
+			z-index: 1;
+			bottom: 125%;
+			left: 50%;
+			margin-left: -60px;
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+
+		.tooltip .tooltiptext::after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+
+		}
+
+		.tooltip:hover .tooltiptext {
+			visibility: visible;
+			opacity: 1;
+		}
+
+		@keyframes example {
+			from {
+				top: 700px;
+				background-color: yellow;
+			}
+
+			to {
+				top: 50px;
+				background-color: blue;
+			}
+		}
+
+		#SkillBox {
+			float: left;
+			font-size: 20px;
+
+			width: 400px;
+			height: auto;
+			margin: 50px auto;
+
+
+		}
+
+		#SkillBox img {
+			width: 20%;
+			height: 10%;
+			margin: auto 35%;
+			padding: 10px;
+		}
+
+		.SkillBar {
+			width: 90%;
+			height: 50px;
+			position: relative;
+			background: rgba(17, 17, 17, .3);
+			margin: 20px auto;
+		}
+
+		#Skill-HTML {
+			width: 100%;
+			animation: Animate-HTML 4s;
+			-webkit-animation: Animate-HTML 4s;
+			-moz-animation: Animate-HTML 4s;
+			-o-animation: Animate-HTML 4s;
+			height: 50px;
+			position: absolute;
+			background-color: #ea8564;
+		}
+
+		#Skill-CSS {
+			animation: Animate-CSS 5s;
+			-webkit-animation: Animate-CSS 5s;
+			-moz-animation: Animate-CSS 5s;
+			-o-animation: Animate-CSS 5s;
+			width: 70%;
+			height: 50px;
+			position: absolute;
+			background-color: #55a69f;
+		}
+
+		#Skill-jQuery {
+			animation: Animate-jQuery 5s;
+			-webkit-animation: Animate-jQuery 5s;
+			-moz-animation: Animate-jQuery 5s;
+			-o-animation: Animate-jQuery 5s;
+			width: 40%;
+			height: 50px;
+			position: absolute;
+			background-color: #99856d;
+		}
+
+		#Skill-JS {
+			animation: Animate-JS 4s;
+			-webkit-animation: Animate-JS 4s;
+			-moz-animation: Animate-JS 4s;
+			-o-animation: Animate-JS 4s;
+			width: 65%;
+			height: 50px;
+			position: absolute;
+			background-color: #c44e45;
+		}
+
+		#Skill-PHP {
+			animation: Animate-PHP 4s;
+			-webkit-animation: Animate-PHP 4s;
+			-moz-animation: Animate-PHP 4s;
+			-o-animation: Animate-PHP 4s;
+			width: 50%;
+			height: 50px;
+			position: absolute;
+			background-color: #5A69A6;
+		}
+
+		div {
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			background-attachment: fixed;
+			height: 90vh;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<div class="card">
+
+
+			<div class="header">
+				<div>
+
+					<h1>Web Developer</h1>
+				</div>
+
+			</div>
+	</header>
+
+	<section>
+		<br />
+		<div class="parent">
+
+
+			<div id="SkillBox">
+				<p>My Skills</p>
+				<img src="http://2.bp.blogspot.com/--aPlnH6X1YA/UEf7yeJ3gGI/AAAAAAAATgw/TgMK9IVzipk/s1600/Skills%2B-%2BPawan%2BMall.png"
+					alt="Skill - Pawan Mall" />
+				<div class="SkillBar">
+					<div id="Skill-HTML">
+						<span class="Skill-Area ">HTML</span>
+						<span class="PercentText ">100%</span>
+					</div>
+				</div>
+
+				<div class="SkillBar">
+					<div id="Skill-CSS">
+						<span class="Skill-Area ">CSS/CSS3</span>
+						<span class="PercentText ">70%</span>
+					</div>
+				</div>
+
+				<div class="SkillBar">
+					<div id="Skill-jQuery">
+						<span class="Skill-Area ">jQuery</span>
+						<span class="PercentText ">40%</span>
+					</div>
+				</div>
+
+				<div class="SkillBar">
+					<div id="Skill-JS">
+						<span class="Skill-Area ">Javascript</span>
+						<span class="PercentText ">65%</span>
+					</div>
+				</div>
+
+
+
+
+
+
+				<div class="SkillBar">
+					<div id="Skill-PHP">
+						<span class="Skill-Area ">PHP </span>
+						<span class="PercentText ">50%</span>
+					</div>
+				</div>
+
+
+
+			</div>
+
+			<div class="text">
+				<p>➢ 1year of innovation in Web Development and Programming to build my professional portfolio. Skilled
+					problem-solver with fast learning ability for cutting edge technology.</p>
+			</div>
+			<div style="background-image: url(https://placeimg.com/1000/600/arch);"></div>
+
+			<div style="background-image: url(https://placeimg.com/1000/600/nature);"></div>
+
+			<div
+				style="background-image: url(https://divisupreme.gumlet.com/wp-content/uploads/2018/12/girl-2696947_640.jpg?compress=true&quality=65&w=360&dpr=2.6);">
+			</div>
+		</div>
+		</div>
+	</section>
+	</div>
+</body>
+
+</html>
